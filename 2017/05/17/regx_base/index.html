@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="liqiang,java,blog" />
+  <meta name="keywords" content="java,regx," />
 
 
 
@@ -88,24 +88,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/heart.png?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
+<meta name="keywords" content="java,regx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/24/hello-world/index.html">
+<meta property="og:title" content="正则表达式基础符号概念">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/regx_base/index.html">
 <meta property="og:site_name" content="Strive">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-24T08:04:02.613Z">
+<meta property="og:updated_time" content="2017-08-24T12:40:29.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="正则表达式基础符号概念">
+<meta name="twitter:description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/24/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/17/regx_base/"/>
 
 
 
 
 
-  <title>Hello World | Strive</title>
+  <title>正则表达式基础符号概念 | Strive</title>
   
 
 
@@ -288,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/regx_base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiQiang">
@@ -305,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式基础符号概念</h1>
         
 
         <div class="post-meta">
@@ -317,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T16:04:02+08:00">
-                2017-08-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T00:00:00+08:00">
+                2017-05-17
               </time>
             
 
@@ -328,6 +329,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -336,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/24/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2017/05/17/regx_base/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/24/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/05/17/regx_base/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,15 +389,36 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…</p>
+<hr>
+<h5 id="句点符号"><a href="#句点符号" class="headerlink" title="句点符号"></a>句点符号</h5><p><strong>.</strong> 任意单个字符  </p>
+<p>例：<strong>a.b</strong> 匹配三位长度字符串，中间任意字符；如<strong>a b</strong>，<strong>a1b</strong>，<strong>a-b</strong>等</p>
+<hr>
+<h5 id="方括号-圆括号"><a href="#方括号-圆括号" class="headerlink" title="方括号 圆括号"></a>方括号 圆括号</h5><p><strong>[]</strong> 单字符长度范围， <strong>()</strong> 分组（不限长度）  </p>
+<p>例：<strong>a[123]b</strong> 匹配三位长度字符串，中间指定字符；如<strong>a1b</strong>,<strong>a2b</strong>,<strong>a3b</strong>，<strong>()</strong>用法同理</p>
+<hr>
+<h5 id="或符号"><a href="#或符号" class="headerlink" title="或符号"></a>或符号</h5><p><strong>|</strong> 或运算</p>
+<p>例：<strong>(a|b|cc)</strong> 匹配a或b或cc，此处不可使用 <strong>[]</strong> </p>
+<hr>
+<h5 id="星号"><a href="#星号" class="headerlink" title="星号"></a>星号</h5><p><strong>*</strong> 匹配左边字符0次<strong>或</strong>多次</p>
+<p>例：<strong>a*[b]</strong> 匹配最后一位字符是b,前面字符全为a的字串<strong>或</strong>单个b字符，如<strong>ab</strong>，<strong>aaab</strong>，<strong>b</strong>   </p>
+<hr>
+<h5 id="加号"><a href="#加号" class="headerlink" title="加号"></a>加号</h5><p><strong>+</strong> 匹配左边字符1次<strong>或</strong>多次    </p>
+<p>例: <strong>a+[b]</strong> 匹配第二位是b字符，b字符前面一个<strong>或</strong>多个a字符的字符串，如<strong>aab</strong>，<strong>ab</strong>,<strong>aaab</strong>  </p>
+<hr>
+<h5 id="问号"><a href="#问号" class="headerlink" title="问号"></a>问号</h5><p><strong>\?</strong> 匹配左边字符0次<strong>或</strong>一次（有或无此字符-&gt;有此字符也满足条件）</p>
+<p>例：<strong>a?[ab]</strong> 匹配左边有a字符或无a字符，第二位为a或b的字符串，如<strong>a</strong>，<strong>ab</strong>，<strong>b</strong></p>
+<hr>
+<h5 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h5><p><strong>{n} | {m-n}</strong> 匹配左边字符恰好n次 或 m-n 次（连续性）</p>
+<p>例：<strong>a{3}b</strong>只匹配字符串<strong>aaab</strong>  </p>
+<hr>
+<h5 id="否符号"><a href="#否符号" class="headerlink" title="否符号"></a>否符号</h5><p><strong>^</strong> 非运算  </p>
+<p>例：<strong>[^a]b</strong>匹配第一个字符不是a，第二个字符是b的字符串</p>
+<hr>
+<h5 id="常用正则表达式符号"><a href="#常用正则表达式符号" class="headerlink" title="常用正则表达式符号"></a>常用正则表达式符号</h5><p><strong>\s</strong> 等价于 <strong>[\t\n\r\f]</strong>              即tab制表符、换行符、回车符、换页符，其一，也就是空白字符</p>
+<p><strong>\d</strong>等价于 <strong>[0-9]</strong> 也就是数字字符</p>
+<p><strong>\w</strong>等价于 <strong>[A-Z0-9]</strong> 也就是字符，字母字符无论大小写都匹配哦</p>
+<p><strong>\S</strong> <strong>\D</strong> <strong>\W</strong> 即上面三种符号定义的“非”逻辑</p>
 
       
     </div>
@@ -390,11 +434,39 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/regx/" rel="tag"># regx</a>
+          
+        </div>
+      
 
       
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/03/excel_export_byReflect/" rel="next" title="通用excel导出demo">
+                <i class="fa fa-chevron-left"></i> 通用excel导出demo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/23/mysql_base/" rel="prev" title="mysql基础概念与语法">
+                mysql基础概念与语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -477,14 +549,32 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -529,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#句点符号"><span class="nav-number">1.</span> <span class="nav-text">句点符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方括号-圆括号"><span class="nav-number">2.</span> <span class="nav-text">方括号 圆括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#或符号"><span class="nav-number">3.</span> <span class="nav-text">或符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#星号"><span class="nav-number">4.</span> <span class="nav-text">星号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加号"><span class="nav-number">5.</span> <span class="nav-text">加号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问号"><span class="nav-number">6.</span> <span class="nav-text">问号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#花括号"><span class="nav-number">7.</span> <span class="nav-text">花括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#否符号"><span class="nav-number">8.</span> <span class="nav-text">否符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用正则表达式符号"><span class="nav-number">9.</span> <span class="nav-text">常用正则表达式符号</span></a></li></ol></div>
             
 
           </div>
@@ -676,9 +766,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/24/hello-world/';
-          this.page.identifier = '2017/08/24/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2017/05/17/regx_base/';
+          this.page.identifier = '2017/05/17/regx_base/';
+          this.page.title = '正则表达式基础符号概念';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://liqiangcoder.disqus.com/embed.js';
