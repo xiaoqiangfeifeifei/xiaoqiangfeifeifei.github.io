@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,weixin," />
+  <meta name="keywords" content="java,regx," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
-<meta name="keywords" content="java,weixin">
+<meta name="description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
+<meta name="keywords" content="java,regx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序支付接口二次签名">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/index.html">
+<meta property="og:title" content="正则表达式基础符号概念">
+<meta property="og:url" content="http://yoursite.com/2016/05/17/regx_base/index.html">
 <meta property="og:site_name" content="Strive">
-<meta property="og:description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
+<meta property="og:description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-25T02:28:00.543Z">
+<meta property="og:updated_time" content="2017-08-25T02:28:11.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序支付接口二次签名">
-<meta name="twitter:description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
+<meta name="twitter:title" content="正则表达式基础符号概念">
+<meta name="twitter:description" content="在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…  句点符号. 任意单个字符   例：a.b 匹配三位长度字符串，中间任意字符；如a b，a1b，a-b等  方括号 圆括号[] 单字符长度范围， () 分组（不限长度）   例：a[123]b 匹配三位长度字符串，中间指定字符；如a1b,a2b,a3b，()用法同理">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/05/17/regx_base/"/>
 
 
 
 
 
-  <title>微信小程序支付接口二次签名 | Strive</title>
+  <title>正则表达式基础符号概念 | Strive</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/17/regx_base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiQiang">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微信小程序支付接口二次签名</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式基础符号概念</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T00:00:00+08:00">
-                2017-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-17T00:00:00+08:00">
+                2016-05-17
               </time>
             
 
@@ -359,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/12/weixin_miniProgram_sign/#comments" itemprop="discussionUrl">
+                <a href="/2016/05/17/regx_base/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/12/weixin_miniProgram_sign/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/05/17/regx_base/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,10 +389,36 @@
       
 
       
-        <p>今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。</p>
-<p>接口返回下列参数供小程序调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">paySign //签名      prePay.getMiniPackage(prepayid));</div><div class="line">timeStamp //时间戳  prePay.getTimeStamp());</div><div class="line">nonceStr//随机签名  prePay.getNonce_str());			</div><div class="line">package//预支付订单，格式为prepay_id=*;</div></pre></td></tr></table></figure></p>
-<p>其中主要参数 paySign，是<strong>二次签名</strong>。具体签名参数 是采用 <strong>调用微信接口获取到预支付订单prepayid后服务器返回的参数</strong>（包括小程序需要调用的nonceStr,prepay_id）， 主要用下列参数生成paySign，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appId=【appid】&amp;nonceStr=【随机字符串】&amp;package=prepay_id=【返回的prepay_id】&amp;signType=MD5&amp;timeStamp=【时间戳】&amp;key=【支付秘钥】</div></pre></td></tr></table></figure></p>
-<p>二次签名代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public String getMiniPackage(String prepay_id) &#123;</div><div class="line">	TreeMap&lt;String, String&gt; treeMap = new TreeMap&lt;String, String&gt;();</div><div class="line">	String timeStamp=OrderUtil.GetTimestamp();</div><div class="line">	setTimeStamp(timeStamp);</div><div class="line">	treeMap.put(&quot;appId&quot;, this.appid);</div><div class="line">	treeMap.put(&quot;nonceStr&quot;, getNonce_str());</div><div class="line">	treeMap.put(&quot;package&quot;, &quot;prepay_id=&quot;+prepay_id);</div><div class="line">	treeMap.put(&quot;signType&quot;, &quot;MD5&quot;);</div><div class="line">	treeMap.put(&quot;timeStamp&quot;,timeStamp);</div><div class="line">	</div><div class="line">	StringBuilder sb = new StringBuilder();</div><div class="line">	for (String key : treeMap.keySet()) &#123;</div><div class="line">		sb.append(key).append(&quot;=&quot;).append(treeMap.get(key)).append(&quot;&amp;&quot;);</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;key=&quot; + partnerKey);</div><div class="line">	System.out.println(&quot;小程序二次签名：&quot;+sb.toString());</div><div class="line">	sign = MD5Util.MD5Encode(sb.toString(), &quot;utf-8&quot;).toUpperCase();</div><div class="line">	return sign;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…</p>
+<hr>
+<h5 id="句点符号"><a href="#句点符号" class="headerlink" title="句点符号"></a>句点符号</h5><p><strong>.</strong> 任意单个字符  </p>
+<p>例：<strong>a.b</strong> 匹配三位长度字符串，中间任意字符；如<strong>a b</strong>，<strong>a1b</strong>，<strong>a-b</strong>等</p>
+<hr>
+<h5 id="方括号-圆括号"><a href="#方括号-圆括号" class="headerlink" title="方括号 圆括号"></a>方括号 圆括号</h5><p><strong>[]</strong> 单字符长度范围， <strong>()</strong> 分组（不限长度）  </p>
+<p>例：<strong>a[123]b</strong> 匹配三位长度字符串，中间指定字符；如<strong>a1b</strong>,<strong>a2b</strong>,<strong>a3b</strong>，<strong>()</strong>用法同理</p>
+<hr>
+<h5 id="或符号"><a href="#或符号" class="headerlink" title="或符号"></a>或符号</h5><p><strong>|</strong> 或运算</p>
+<p>例：<strong>(a|b|cc)</strong> 匹配a或b或cc，此处不可使用 <strong>[]</strong> </p>
+<hr>
+<h5 id="星号"><a href="#星号" class="headerlink" title="星号"></a>星号</h5><p><strong>*</strong> 匹配左边字符0次<strong>或</strong>多次</p>
+<p>例：<strong>a*[b]</strong> 匹配最后一位字符是b,前面字符全为a的字串<strong>或</strong>单个b字符，如<strong>ab</strong>，<strong>aaab</strong>，<strong>b</strong>   </p>
+<hr>
+<h5 id="加号"><a href="#加号" class="headerlink" title="加号"></a>加号</h5><p><strong>+</strong> 匹配左边字符1次<strong>或</strong>多次    </p>
+<p>例: <strong>a+[b]</strong> 匹配第二位是b字符，b字符前面一个<strong>或</strong>多个a字符的字符串，如<strong>aab</strong>，<strong>ab</strong>,<strong>aaab</strong>  </p>
+<hr>
+<h5 id="问号"><a href="#问号" class="headerlink" title="问号"></a>问号</h5><p><strong>\?</strong> 匹配左边字符0次<strong>或</strong>一次（有或无此字符-&gt;有此字符也满足条件）</p>
+<p>例：<strong>a?[ab]</strong> 匹配左边有a字符或无a字符，第二位为a或b的字符串，如<strong>a</strong>，<strong>ab</strong>，<strong>b</strong></p>
+<hr>
+<h5 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h5><p><strong>{n} | {m-n}</strong> 匹配左边字符恰好n次 或 m-n 次（连续性）</p>
+<p>例：<strong>a{3}b</strong>只匹配字符串<strong>aaab</strong>  </p>
+<hr>
+<h5 id="否符号"><a href="#否符号" class="headerlink" title="否符号"></a>否符号</h5><p><strong>^</strong> 非运算  </p>
+<p>例：<strong>[^a]b</strong>匹配第一个字符不是a，第二个字符是b的字符串</p>
+<hr>
+<h5 id="常用正则表达式符号"><a href="#常用正则表达式符号" class="headerlink" title="常用正则表达式符号"></a>常用正则表达式符号</h5><p><strong>\s</strong> 等价于 <strong>[\t\n\r\f]</strong>              即tab制表符、换行符、回车符、换页符，其一，也就是空白字符</p>
+<p><strong>\d</strong>等价于 <strong>[0-9]</strong> 也就是数字字符</p>
+<p><strong>\w</strong>等价于 <strong>[A-Z0-9]</strong> 也就是字符，字母字符无论大小写都匹配哦</p>
+<p><strong>\S</strong> <strong>\D</strong> <strong>\W</strong> 即上面三种符号定义的“非”逻辑</p>
 
       
     </div>
@@ -412,7 +438,7 @@
           
             <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/weixin/" rel="tag"># weixin</a>
+            <a href="/tags/regx/" rel="tag"># regx</a>
           
         </div>
       
@@ -425,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/mysql_base/" rel="next" title="mysql基础概念与语法">
-                <i class="fa fa-chevron-left"></i> mysql基础概念与语法
+              <a href="/2016/03/23/URL_ChineseParameter_MessyCode/" rel="next" title="解决url传中文参数乱码">
+                <i class="fa fa-chevron-left"></i> 解决url传中文参数乱码
               </a>
             
           </div>
@@ -435,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/25/weixin_web_OrdinaryRedPacket/" rel="prev" title="微信公众平台普通红包发放">
-                微信公众平台普通红包发放 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/23/mysql_base/" rel="prev" title="mysql基础概念与语法">
+                mysql基础概念与语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -496,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -574,6 +609,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#句点符号"><span class="nav-number">1.</span> <span class="nav-text">句点符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方括号-圆括号"><span class="nav-number">2.</span> <span class="nav-text">方括号 圆括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#或符号"><span class="nav-number">3.</span> <span class="nav-text">或符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#星号"><span class="nav-number">4.</span> <span class="nav-text">星号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加号"><span class="nav-number">5.</span> <span class="nav-text">加号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问号"><span class="nav-number">6.</span> <span class="nav-text">问号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#花括号"><span class="nav-number">7.</span> <span class="nav-text">花括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#否符号"><span class="nav-number">8.</span> <span class="nav-text">否符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用正则表达式符号"><span class="nav-number">9.</span> <span class="nav-text">常用正则表达式符号</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -715,9 +766,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/04/12/weixin_miniProgram_sign/';
-          this.page.identifier = '2017/04/12/weixin_miniProgram_sign/';
-          this.page.title = '微信小程序支付接口二次签名';
+          this.page.url = 'http://yoursite.com/2016/05/17/regx_base/';
+          this.page.identifier = '2016/05/17/regx_base/';
+          this.page.title = '正则表达式基础符号概念';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://liqiangcoder.disqus.com/embed.js';

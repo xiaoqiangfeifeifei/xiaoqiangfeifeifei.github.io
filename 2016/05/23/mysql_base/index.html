@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,weixin," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
-<meta name="keywords" content="java,weixin">
+<meta name="description" content="由于没有系统学过mysql，之前自己看的相关ppt资料也是囫囵吞枣式的，对视图、游标、事物什么的理解都不是很深刻。特意找了本基础的书（《mysql必知必会》）看了下。  常用命令关键词   登录账户：mysql -u username显示库的信息：show databases操作库之前选择对应的库：use database_name显示库中的表： show tables显示表的列： show co">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序支付接口二次签名">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/index.html">
+<meta property="og:title" content="mysql基础概念与语法">
+<meta property="og:url" content="http://yoursite.com/2016/05/23/mysql_base/index.html">
 <meta property="og:site_name" content="Strive">
-<meta property="og:description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
+<meta property="og:description" content="由于没有系统学过mysql，之前自己看的相关ppt资料也是囫囵吞枣式的，对视图、游标、事物什么的理解都不是很深刻。特意找了本基础的书（《mysql必知必会》）看了下。  常用命令关键词   登录账户：mysql -u username显示库的信息：show databases操作库之前选择对应的库：use database_name显示库中的表： show tables显示表的列： show co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-25T02:28:00.543Z">
+<meta property="og:updated_time" content="2017-08-25T02:28:06.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序支付接口二次签名">
-<meta name="twitter:description" content="今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。 接口返回下列参数供小程序调用1234paySign //签名      prePay.getMiniPackage(prepayid));timeStamp //时间戳  prePay.getTimeStamp());nonceStr//随机签名">
+<meta name="twitter:title" content="mysql基础概念与语法">
+<meta name="twitter:description" content="由于没有系统学过mysql，之前自己看的相关ppt资料也是囫囵吞枣式的，对视图、游标、事物什么的理解都不是很深刻。特意找了本基础的书（《mysql必知必会》）看了下。  常用命令关键词   登录账户：mysql -u username显示库的信息：show databases操作库之前选择对应的库：use database_name显示库中的表： show tables显示表的列： show co">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/05/23/mysql_base/"/>
 
 
 
 
 
-  <title>微信小程序支付接口二次签名 | Strive</title>
+  <title>mysql基础概念与语法 | Strive</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/weixin_miniProgram_sign/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/23/mysql_base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiQiang">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微信小程序支付接口二次签名</h1>
+          <h1 class="post-title" itemprop="name headline">mysql基础概念与语法</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T00:00:00+08:00">
-                2017-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-23T00:00:00+08:00">
+                2016-05-23
               </time>
             
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
                   </a>
                 </span>
 
@@ -359,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/12/weixin_miniProgram_sign/#comments" itemprop="discussionUrl">
+                <a href="/2016/05/23/mysql_base/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/12/weixin_miniProgram_sign/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/05/23/mysql_base/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,10 +389,44 @@
       
 
       
-        <p>今天小程序的支付接口遇到签名错误问题。折腾半天…原因是：小程序支付的签名需要进行2次！！！不是成功获取订单后微信服务器回调的xml中的那个sign。</p>
-<p>接口返回下列参数供小程序调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">paySign //签名      prePay.getMiniPackage(prepayid));</div><div class="line">timeStamp //时间戳  prePay.getTimeStamp());</div><div class="line">nonceStr//随机签名  prePay.getNonce_str());			</div><div class="line">package//预支付订单，格式为prepay_id=*;</div></pre></td></tr></table></figure></p>
-<p>其中主要参数 paySign，是<strong>二次签名</strong>。具体签名参数 是采用 <strong>调用微信接口获取到预支付订单prepayid后服务器返回的参数</strong>（包括小程序需要调用的nonceStr,prepay_id）， 主要用下列参数生成paySign，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appId=【appid】&amp;nonceStr=【随机字符串】&amp;package=prepay_id=【返回的prepay_id】&amp;signType=MD5&amp;timeStamp=【时间戳】&amp;key=【支付秘钥】</div></pre></td></tr></table></figure></p>
-<p>二次签名代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public String getMiniPackage(String prepay_id) &#123;</div><div class="line">	TreeMap&lt;String, String&gt; treeMap = new TreeMap&lt;String, String&gt;();</div><div class="line">	String timeStamp=OrderUtil.GetTimestamp();</div><div class="line">	setTimeStamp(timeStamp);</div><div class="line">	treeMap.put(&quot;appId&quot;, this.appid);</div><div class="line">	treeMap.put(&quot;nonceStr&quot;, getNonce_str());</div><div class="line">	treeMap.put(&quot;package&quot;, &quot;prepay_id=&quot;+prepay_id);</div><div class="line">	treeMap.put(&quot;signType&quot;, &quot;MD5&quot;);</div><div class="line">	treeMap.put(&quot;timeStamp&quot;,timeStamp);</div><div class="line">	</div><div class="line">	StringBuilder sb = new StringBuilder();</div><div class="line">	for (String key : treeMap.keySet()) &#123;</div><div class="line">		sb.append(key).append(&quot;=&quot;).append(treeMap.get(key)).append(&quot;&amp;&quot;);</div><div class="line">	&#125;</div><div class="line">	sb.append(&quot;key=&quot; + partnerKey);</div><div class="line">	System.out.println(&quot;小程序二次签名：&quot;+sb.toString());</div><div class="line">	sign = MD5Util.MD5Encode(sb.toString(), &quot;utf-8&quot;).toUpperCase();</div><div class="line">	return sign;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>由于没有系统学过mysql，之前自己看的相关ppt资料也是囫囵吞枣式的，对视图、游标、事物什么的理解都不是很深刻。特意找了本基础的书（《mysql必知必会》）看了下。</p>
+<hr>
+<p><strong>常用命令关键词</strong>  </p>
+<p>登录账户：<strong>mysql -u username</strong><br>显示库的信息：<strong>show databases</strong><br>操作库之前选择对应的库：<strong>use database_name</strong><br>显示库中的表： <strong>show tables</strong><br>显示表的列： <strong>show columns from table_name</strong>  或 <strong>describe table_name</strong><br>正则表达式查找： REGEXP （用法同<strong>LIKE</strong>，只不过关键词右边跟的是正则串）  </p>
+<hr>
+<p><strong>mysql函数</strong></p>
+<p>字符串</p>
+<p>字符串连接： concat(str…)<br>串左边字符： left(str，len)<br>串右边字符： right(str，len)<br>串长度：length(str)<br>字串位置 ： locate(substr，str)<br>将串转小写：lower(str)<br>将串转大写：upper(str)<br>去全部空格：trim(str)<br>去左边空格：ltrim(str)<br>去右边空格：rtrim(str)<br>返回子串：substirng(str FROM pos FOR len)<br>soundex发音值：soundex(str)</p>
+<p>日期</p>
+<p>增加时间：Date_add(date，interval expr type)<br>当前日期+时间：now()<br>当前日期：curdate()<br>当前时间：curtime()<br>返回日期部分：Date(expr)<br>返回时间部分：Time(expr)<br>返回年份部分：year(expr)<br>返回月份部分：month(expr)<br>返回天数部分：day(expr)<br>返回分钟部分：month(expr)<br>返回秒数部分：second(expr)<br>返回日期之差(result_type：day)：dateDiff(expr1，expr2)<br>时间格式化：date_format(date,format)<br>返回星期几：dayOfWeek(date) [1=星期日，2=星期一…7=星期六]</p>
+<p>全文本查找</p>
+<p>需要为被搜索列建立FULLTEXT索引，并且引擎为MYISAM; 建表语句例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE test</div><div class="line">(</div><div class="line">    id  int  NOT NULL AUTO_INCREMENT,</div><div class="line">    msg text NULL,</div><div class="line">    PRIMARY KEY (id),</div><div class="line">    FULLTEXT(msg)</div><div class="line"></div><div class="line">)ENGINE=MYISAM;</div></pre></td></tr></table></figure></p>
+<p>文本查找语句则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select msg from test where  Match(msg) against(&quot;xiaoqiang&quot;);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>视图</strong></p>
+<p>主要用来简化复杂查询语句，创建可重用的 “sql查询接口”，至于更新操作（包括插入，删除）则取决于视图建立条件，如果采用聚合函数、group by等就不允许更新。（更新视图实质上是对原表进行更新，不确定具体字段 自然不会允许更新）</p>
+<p>创建视图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE  VIEW `exam_view` AS  select *  from `exam` where  appid = &apos;xxxxxxx&apos;;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>存储过程</strong></p>
+<p>实质上是sql中的函数，主要用于处理复杂的sql业务（高效，安全）。例如用户商品下单时对库存商品进行一系列处理，检查商品，预定商品，更新库存数目等等 一系列流程就可采用存储过程实现。</p>
+<p>创建过程中IN代表函数接收参数，OUT是返回结果，INOUT则复合了IN、OUT的特性。</p>
+<p>显示存储过程信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SHOW CREATE PROCEDURE processName;</div><div class="line">SHOW PROCEDURE STATUS [LIKE processName];</div></pre></td></tr></table></figure>
+<p>创建存储过程:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE PROCEDURE queryEnameByEid(IN eid_Para INT,OUT ename_result VARCHAR(100))  </div><div class="line">BEGIN</div><div class="line">	SELECT ename FROM exam WHERE eid=eid_Para INTO ename_result;</div><div class="line">END;</div></pre></td></tr></table></figure>
+<p>执行存储过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CALL processName(30,@ename_result);</div></pre></td></tr></table></figure>
+<p>调用函数结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT @ename_result;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>游标</strong></p>
+<p>实质上是存储了数据序列的结果集，在mysql中只能用于存储过程中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">BEGIN</div><div class="line">	-- 声明局部变量</div><div class="line">  DECLARE flag INT DEFAULT 0;</div><div class="line">	DECLARE tmp_value VARCHAR(50);</div><div class="line">	-- 声明游标</div><div class="line">	DECLARE my_cursor CURSOR FOR (SELECT ename FROM exam);</div><div class="line">	-- 建表</div><div class="line">	CREATE TABLE  IF NOT EXISTS test_cursor(id int AUTO_INCREMENT,ename VARCHAR(50),PRIMARY KEY(id));</div><div class="line">	-- 开启游标</div><div class="line">    OPEN my_cursor;</div><div class="line">	-- 循环开始</div><div class="line">	REPEAT</div><div class="line">        -- 将游标获取的值放局部变量里</div><div class="line">		FETCH my_cursor INTO tmp_value;</div><div class="line">		-- 更改flag值</div><div class="line">		SET flag=flag+1;</div><div class="line">		-- 插入语句</div><div class="line">		INSERT INTO test_cursor(ename) VALUES(tmp_value);</div><div class="line">	-- 游标到10时结束循环</div><div class="line">	UNTIL flag=10 END REPEAT;</div><div class="line">	-- 打印表数据</div><div class="line">	SELECT * FROM test_cursor;</div><div class="line">	-- 关闭游标</div><div class="line">	CLOSE my_cursor;</div><div class="line">	</div><div class="line">END</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>触发器</strong></p>
+<p>将事件与sql执行状况绑定,可使用NEW、OLD虚拟表访问具体操作的字段值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE TRIGGER delete_question_msg AFTER DELETE ON question</div><div class="line">FOR EACH ROW SELECT &apos;delete question finished!&apos; INTO @msg;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DELETE FROM question WHERE qid=528;</div><div class="line">SELECT @msg;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -410,9 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/weixin/" rel="tag"># weixin</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -425,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/mysql_base/" rel="next" title="mysql基础概念与语法">
-                <i class="fa fa-chevron-left"></i> mysql基础概念与语法
+              <a href="/2016/05/17/regx_base/" rel="next" title="正则表达式基础符号概念">
+                <i class="fa fa-chevron-left"></i> 正则表达式基础符号概念
               </a>
             
           </div>
@@ -435,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/25/weixin_web_OrdinaryRedPacket/" rel="prev" title="微信公众平台普通红包发放">
-                微信公众平台普通红包发放 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/12/weixin_miniProgram_sign/" rel="prev" title="微信小程序支付接口二次签名">
+                微信小程序支付接口二次签名 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -715,9 +747,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/04/12/weixin_miniProgram_sign/';
-          this.page.identifier = '2017/04/12/weixin_miniProgram_sign/';
-          this.page.title = '微信小程序支付接口二次签名';
+          this.page.url = 'http://yoursite.com/2016/05/23/mysql_base/';
+          this.page.identifier = '2016/05/23/mysql_base/';
+          this.page.title = 'mysql基础概念与语法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://liqiangcoder.disqus.com/embed.js';
