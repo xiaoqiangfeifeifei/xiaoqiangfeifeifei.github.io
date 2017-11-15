@@ -288,6 +288,276 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/linux_command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Strive">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/15/linux_command/" itemprop="url">linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T00:00:00+08:00">
+                2017-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/15/linux_command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/15/linux_command/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/15/linux_command/" class="leancloud_visitors" data-flag-title="linux常用命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><hr>
+<p><strong><em>基本操作快捷键</em></strong></p>
+<ul>
+<li>登录shell <strong>ctrl+shift+f1-f6</strong></li>
+<li>退出shell到图形页面 <strong>ctrl+shift+f7</strong>  </li>
+<li>命令补全 <strong>tab</strong></li>
+<li>暂停正在运行的shell程序执行 <strong>ctrl+c</strong></li>
+<li>注销shell执行（=exit） <strong>ctrl+d</strong>  </li>
+</ul>
+<p><strong><em>基本操作命令行</em></strong></p>
+<ul>
+<li>修改shell支持语言 </li>
+<li style="list-style: none"><input type="checkbox" checked> 查看语言编码格式 <strong>echo $LANG</strong></li>
+<li style="list-style: none"><input type="checkbox" checked> 修改语言格式为英文 <strong>LANG=en_US</strong></li>
+<li>切换用户 <strong>su</strong></li>
+<li>查看日期 <strong>date</strong></li>
+<li>查看日历 <strong>cal</strong></li>
+<li>计算器 <strong>bc</strong></li>
+<li style="list-style: none"><input type="checkbox" checked> 显示小数位数（默认整数）<strong>sclae=n</strong></li>
+<li style="list-style: none"><input type="checkbox" checked> 离开计算器 <strong>quit</strong></li>
+<li>命令行帮助文档 <strong>man+命令行</strong></li>
+<li>将数据同步写入硬盘（一般root写入）<em>*sync</em></li>
+<li>关机 <strong>shutdown</strong></li>
+<li style="list-style: none"><input type="checkbox"> <strong>-h</strong> 立即关机</li>
+<li style="list-style: none"><input type="checkbox"> <strong>-r</strong> 立即重启</li>
+<li style="list-style: none"><input type="checkbox"> <strong>-k</strong> 只显示消息</li>
+<li style="list-style: none"><input type="checkbox" checked> <strong>shutdown -h +10/20:15 ‘we are readying the linux after 10min/ in 20:15’</strong> 在10分钟后（或于20:15）关机，并且在当前登录此机器的用户屏幕前显示信息</li>
+<li>文件系统检查 <strong>fsck</strong></li>
+</ul>
+<hr>
+<p><strong><em>文件管理命令行</em></strong> </p>
+<ul>
+<li>展示所有文件 <strong>ls -al</strong></li>
+<li>展示特定文件夹下文件 <strong>ls -l /../..</strong></li>
+<li>改变文件用户组 <strong>chgrp groupname dirname/filename</strong></li>
+<li>改变文件所有者 <strong>chown ownname [:groupname] dirname/filename</strong></li>
+<li>改变文件权限 <strong>chmod numberList|chatList dirname/filename</strong></li>
+<li style="list-style: none"><input type="checkbox" checked> rwz三种权限对应数字分别为4 2 1,如果将test.text的权限修改为 rwxr<em>xrw</em>，命令也就是 chmod 756 test.text</li>
+<li style="list-style: none"><input type="checkbox" checked> 也可以使用u g o通过+ - =操作符来修改</li>
+<li>创建文件 <strong>touch dirname/filename</strong></li>
+</ul>
+<hr>
+<p><strong><em>文件目录操作</em></strong>  </p>
+<p><strong>特殊符号：</strong>  </p>
+<p>当前目录：  <strong>.</strong><br>上层目录：  <strong>..</strong><br>前一个工作目录： <strong>-</strong><br>当前账户主目录： <strong>~</strong><br>account账户主目录： <strong>~ account</strong>  </p>
+<p><strong>相关命令：</strong>  </p>
+<ul>
+<li>切换目录：<strong>cd</strong></li>
+<li>显示当前目录：<strong>pwd</strong></li>
+<li>创建目录： <strong>mkdir</strong></li>
+<li>删除目录：<strong>rmdir</strong></li>
+<li>移动文件：<strong>mv</strong></li>
+<li>删除文件：<strong>rm</strong></li>
+<li>新建文件： <strong>touch</strong></li>
+<li>赋予文件隐藏属性 ： <strong>chattr</strong> </li>
+<li>新增环境变量：<strong>PATH=”$PATH”:/dirname</strong></li>
+<li>查找执行文件（PATH下）：<strong>which</strong></li>
+<li>查找特定文件: <strong>whereis</strong></li>
+<li>查找本地文件：<strong>locate</strong>(可使用updatedb更新下数据文件再查找，比较耗时)</li>
+<li>详细检索文件(磁盘检索): <strong>find</strong></li>
+<li>查看文件系统属性: <strong>dumpe2fs</strong></li>
+<li>查看当前使用的文件系统: <strong>df</strong></li>
+<li>查看文件系统详情: <strong>du</strong></li>
+<li>磁盘操作: <strong>fdisk</strong> (使用前需用df命令找到文件系统路径)</li>
+<li>磁盘格式化: <strong>mkfs</strong></li>
+<li>挂载命令: <strong>mount</strong></li>
+<li>检查文件系统:<strong>fsck</strong></li>
+<li>文件压缩：<strong>gzip</strong> (.gz)、<strong>bzip2</strong>(.bz2)</li>
+<li style="list-style: none"><input type="checkbox"> 打包压缩（z代表gzip,j代表bzip2）<strong>tar -zpcv -f /root/etc.tar.gz /etc</strong></li>
+<li style="list-style: none"><input type="checkbox"> 查看压缩文件 <strong>tar -ztv -f /root/etc.tar.gz</strong></li>
+<li style="list-style: none"><input type="checkbox"> 解压缩到指定文件夹 <strong>tar -zxv -f /root/etc.tar.gz -C /tmp</strong></li>
+</ul>
+<hr>
+<p><strong><em>bash相关命令</em></strong></p>
+<ul>
+<li>查看环境变量：<strong>env 或  set</strong>  </li>
+<li>取消环境变量 : <strong>unset</strong></li>
+<li>变量键盘读取 : <strong>read</strong></li>
+<li>声明变量类型 : <strong>declare或typeset</strong></li>
+<li>直接写入配置文件: <strong>source 或 .</strong></li>
+</ul>
+<p><strong><em>特殊符号</em></strong></p>
+<ul>
+<li>以覆盖的方法将正确的数据输出：<strong>1&gt;</strong></li>
+<li>以累加的方法将正确的数据输出： <strong>1&gt;&gt;</strong></li>
+<li>以覆盖的方法将错误的数据输出：<strong>2&gt;</strong></li>
+<li>以累加的方法将错误的数据输出：<strong>2&gt;&gt;</strong></li>
+<li>标准输入源  : <strong>&lt;</strong></li>
+<li>标准输入源结束标志 : <strong>&lt;&lt;</strong></li>
+</ul>
+<p><strong><em>管道命令</em></strong></p>
+<ul>
+<li>分割字符 ： <strong>cut</strong></li>
+<li>匹配对应行：<strong>grep</strong></li>
+<li>排序：<strong>sort</strong></li>
+<li>去重 ：<strong>uniq</strong></li>
+<li>统计: <strong>wc</strong></li>
+<li>截取数据流重定向：<strong>tee</strong></li>
+<li>替换，删除字符串 : <strong>tr</strong></li>
+<li>过滤控制字符：<strong>col</strong></li>
+<li>多文件相关栏位联结：<strong>join</strong></li>
+<li>多文件相关栏位粘贴：<strong>paste</strong></li>
+<li>tab转空格：<strong>expand -t</strong></li>
+<li>切割文件 ： <strong>split -b</strong></li>
+<li>一般命令参数代换为管道命令： <strong>xargs </strong></li>
+<li>常用处理工具：<strong>sed，printf, awk</strong></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/linux_vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1615,7 +1885,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
