@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[简单工厂模式]]></title>
+    <url>%2F2017%2F11%2F28%2Fsimple_factory_pattern%2F</url>
+    <content type="text"><![CDATA[简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。 一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂模式（Simple Factory Pattern）并不属于GoF23个经典设计模式，不过它是学习其他工厂模式的基础。概念也比较简单。 定义：定义一个工厂类，里面存在个static方法，根据不同参数返回不同实例，返回的实例通常具有共同父类。结构图如下： 实例下面来举个简单的例子吧。想必很多同学都被家里长辈唠叨过怎么还不找女朋友。那我们就拿这个事来举个简单工厂的例子吧。 首先编写Product与ConcreteProduct类： 1234567891011121314151617181920212223242526272829public abstract class Girl &#123; //女孩的品质 public void character() &#123; System.out.println(&quot;我是一个漂亮的，身材棒的女孩！&quot;); &#125; //女孩的名字 public abstract void name ();&#125;public class XiaoCao extends Girl &#123; @Override public void name() &#123; System.out.println(&quot;我的名字是小草！&quot;); &#125;&#125;public class XiaoHua extends Girl &#123; @Override public void name() &#123; System.out.println(&quot;我的名字是小花！&quot;); &#125;&#125;public class XiaoYe extends Girl &#123; @Override public void name() &#123; System.out.println(&quot;我的名字是小叶！&quot;); &#125;&#125; 可以看到，我们创建了一个抽象类，并用这个类实现了三个具体类。 假如你现在有三个女朋友（不是让你脚踏三只船，只是为了例子说明），Mother要看看她们。我们很容易就想到下面实现： 1234567891011public class Mother &#123; public static void main(String[] args) &#123; Girl girlFriend = new XiaoCao();//小草 girlFriend.character(); girlFriend.name(); &#125;&#125;运行结果：我是一个漂亮的，身材棒的女孩！我的名字是小草！ 看起来很棒，运行结果也没问题。不过Mother看完小草不是那么满意，又想看小花了。或者Father、Sister什么的七大姑八大姨都要来看。这可怎么办，只能修改Mother类了。难道每次换想法我都要改一次吗？有没有一种方法可以直接给他们想要的，需要什么就给什么。 我们可以建立一个Factory类，你想看哪个直接取就是了。 12345678910111213public class GirlFactory &#123; public static Girl getGrilFriend (String name) &#123; Girl girl = null; if (name.equals(&quot;小草&quot;)) &#123; girl = new XiaoCao(); &#125; else if (name.equals(&quot;小花&quot;)) &#123; girl = new XiaoHua(); &#125; else if (name.equals(&quot;小叶&quot;)) &#123; girl = new XiaoYe(); &#125; return girl; &#125;&#125; Mother类变为： 1234567891011public class Mother &#123; public static void main(String[] args) &#123; Girl girlFriend = GirlFactory.getGrilFriend(&quot;小花&quot;); girlFriend.character(); girlFriend.name(); &#125;&#125;运行结果：我是一个漂亮的，身材棒的女孩！我的名字是小花！ 将创建对象的职责交给第三方类(Factory)来执行,来达到解耦合的目的。什么七大姑八大姨想看也直接从Factory里取就是了。需要注意的是工厂模式会对加深对业务的复杂度，当需要创建的对象很多时请慎用。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>创建型模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面向对象的设计原则]]></title>
+    <url>%2F2017%2F11%2F26%2Fdesign_pattern_principle%2F</url>
+    <content type="text"><![CDATA[面向对象的设计原则 在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。下面简单阐述下各个设计原则的概念。 单一职责原则（Single Responsibility Principle, SRP） 定义：一个类只负责一个功能领域中的相应职责 理解： 类的设计不能太臃肿，避免造成不可复用、维护不便等问题。比如WEB系统MVC分层设计就包含了单一职责原则思想，DAO层可以被复用，也便于维护。 开闭原则（Open-Closed Principle, OCP） 定义：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。 理解：抽象化是开闭原则的关键，类的结构设计应具有抽象化的思想，当增加修改时不应大幅度改变原代码结构。java抽象类与接口的概念符合开闭原则，当修改类功能时直接扩展基类就可以。 里氏代换原则（Liskov Substitution Principle, LSP） 定义：所有引用基类（父类）的地方必须能透明地使用其子类的对象。 理解：里氏代换原则是开闭原则的具体实现手段之一。在传递参数、声明类型、定义变量时都可使用里氏代换原则，也就是用基类（抽象类、接口）来定义类型，待到运行时才确定具体子类类型。 依赖倒转原则(Dependency Inversion Principle, DIP) 定义：抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。 理解：实现依赖倒转原则时，针对抽象编程。将具体类的对象通过依赖注入具体注入到其他对象中。（感觉与里氏代换原则很像，分不清…这里理解为里氏代换原则是基础，依赖倒转原则为具体实现） 接口隔离原则（Interface Segregation Principle, ISP） 定义：使用多个专门的接口，而不使用单一的总接口。 理解：接口的粒度必须控制得当，太小会使系统中接口暴增，不利于维护。太大则灵活性较差，且违背单一职责原则。 合成复用原则（Composite Reuse Principle, CRP） 定义：尽量使用对象组合，而不是继承来达到复用的目的。 理解：继承的依赖性相对较强，修改时牵一发而动全身。若两个类之间的关系不是严格的类别关系，而是某个点的职责关系，优先考虑使用合成复用原则。 迪米特法则（Law of Demeter, LoD） 定义： 一个软件实体应当尽可能少地与其他实体发生相互作用。 理解：当前类不要与没有直接关系的类进行消息传递。如必要可以使用中间类（Mediator）来达到松耦合的目的。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux常用命令]]></title>
     <url>%2F2017%2F11%2F15%2Flinux_command%2F</url>
     <content type="text"><![CDATA[linux常用命令 基本操作快捷键 登录shell ctrl+shift+f1-f6 退出shell到图形页面 ctrl+shift+f7 命令补全 tab 暂停正在运行的shell程序执行 ctrl+c 注销shell执行（=exit） ctrl+d 基本操作命令行 修改shell支持语言 查看语言编码格式 echo $LANG 修改语言格式为英文 LANG=en_US 切换用户 su 查看日期 date 查看日历 cal 计算器 bc 显示小数位数（默认整数）sclae=n 离开计算器 quit 命令行帮助文档 man+命令行 将数据同步写入硬盘（一般root写入）*sync 关机 shutdown -h 立即关机 -r 立即重启 -k 只显示消息 shutdown -h +10/20:15 ‘we are readying the linux after 10min/ in 20:15’ 在10分钟后（或于20:15）关机，并且在当前登录此机器的用户屏幕前显示信息 文件系统检查 fsck 文件管理命令行 展示所有文件 ls -al 展示特定文件夹下文件 ls -l /../.. 改变文件用户组 chgrp groupname dirname/filename 改变文件所有者 chown ownname [:groupname] dirname/filename 改变文件权限 chmod numberList|chatList dirname/filename rwz三种权限对应数字分别为4 2 1,如果将test.text的权限修改为 rwxrxrw，命令也就是 chmod 756 test.text 也可以使用u g o通过+ - =操作符来修改 创建文件 touch dirname/filename 文件目录操作 特殊符号： 当前目录： .上层目录： ..前一个工作目录： -当前账户主目录： ~account账户主目录： ~ account 相关命令： 切换目录：cd 显示当前目录：pwd 创建目录： mkdir 删除目录：rmdir 移动文件：mv 删除文件：rm 新建文件： touch 赋予文件隐藏属性 ： chattr 新增环境变量：PATH=”$PATH”:/dirname 查找执行文件（PATH下）：which 查找特定文件: whereis 查找本地文件：locate(可使用updatedb更新下数据文件再查找，比较耗时) 详细检索文件(磁盘检索): find 查看文件系统属性: dumpe2fs 查看当前使用的文件系统: df 查看文件系统详情: du 磁盘操作: fdisk (使用前需用df命令找到文件系统路径) 磁盘格式化: mkfs 挂载命令: mount 检查文件系统:fsck 文件压缩：gzip (.gz)、bzip2(.bz2) 打包压缩（z代表gzip,j代表bzip2）tar -zpcv -f /root/etc.tar.gz /etc 查看压缩文件 tar -ztv -f /root/etc.tar.gz 解压缩到指定文件夹 tar -zxv -f /root/etc.tar.gz -C /tmp bash相关命令 查看环境变量：env 或 set 取消环境变量 : unset 变量键盘读取 : read 声明变量类型 : declare或typeset 直接写入配置文件: source 或 . 特殊符号 以覆盖的方法将正确的数据输出：1&gt; 以累加的方法将正确的数据输出： 1&gt;&gt; 以覆盖的方法将错误的数据输出：2&gt; 以累加的方法将错误的数据输出：2&gt;&gt; 标准输入源 : &lt; 标准输入源结束标志 : &lt;&lt; 管道命令 分割字符 ： cut 匹配对应行：grep 排序：sort 去重 ：uniq 统计: wc 截取数据流重定向：tee 替换，删除字符串 : tr 过滤控制字符：col 多文件相关栏位联结：join 多文件相关栏位粘贴：paste tab转空格：expand -t 切割文件 ： split -b 一般命令参数代换为管道命令： xargs 常用处理工具：sed，printf, awk]]></content>
