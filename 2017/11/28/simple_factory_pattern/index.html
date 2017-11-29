@@ -104,7 +104,7 @@
 <meta property="og:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1flxtdgbkxmj30n70bwju9.jpg">
-<meta property="og:updated_time" content="2017-11-28T11:53:33.823Z">
+<meta property="og:updated_time" content="2017-11-29T14:28:46.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单工厂模式">
 <meta name="twitter:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
@@ -421,7 +421,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class GirlFactory &#123;</div><div class="line">    public static Girl getGrilFriend (String name) &#123;</div><div class="line">        Girl girl = null;</div><div class="line">        if (name.equals(&quot;小草&quot;)) &#123;</div><div class="line">            girl = new XiaoCao();</div><div class="line">        &#125; else if (name.equals(&quot;小花&quot;)) &#123;</div><div class="line">            girl = new XiaoHua();</div><div class="line">        &#125; else if (name.equals(&quot;小叶&quot;)) &#123;</div><div class="line">            girl = new XiaoYe();</div><div class="line">        &#125;</div><div class="line">        return girl;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Mother类变为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Mother &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">         Girl girlFriend = GirlFactory.getGrilFriend(&quot;小花&quot;);</div><div class="line">         girlFriend.character();</div><div class="line">         girlFriend.name();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">运行结果：</div><div class="line">我是一个漂亮的，身材棒的女孩！</div><div class="line">我的名字是小花！</div></pre></td></tr></table></figure>
-<p>将创建对象的职责交给第三方类(Factory)来执行,来达到解耦合的目的。什么七大姑八大姨想看也直接从Factory里取就是了。需要注意的是工厂模式会对加深对业务的复杂度，当需要创建的对象很多时请慎用，并且如果需要增加新的ConcreteProduct必须修改Factory，违背开闭原则。</p>
+<p>将创建对象的职责交给第三方类(Factory)来执行,来达到解耦合的目的。什么七大姑八大姨想看也直接从Factory里取就是了。</p>
+<p>不过缺点想必大家也可以看出，如果需要增加新的ConcreteProduct类时必须修改Factory类，这违背了开闭原则。当需要创建的对象很多时也势必会增加Factory类的复杂度，所以它适用于需要用Factory类创建少量对象的场合。</p>
 
       
     </div>
