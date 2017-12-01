@@ -104,7 +104,7 @@
 <meta property="og:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1flxtdgbkxmj30n70bwju9.jpg">
-<meta property="og:updated_time" content="2017-12-01T08:26:13.727Z">
+<meta property="og:updated_time" content="2017-12-01T08:50:56.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单工厂模式">
 <meta name="twitter:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
@@ -425,7 +425,9 @@
 <p>不过缺点想必大家也可以看出，如果需要增加新的ConcreteProduct类时必须修改Factory类，这违背了开闭原则。当需要创建的对象很多时也势必会增加Factory类的复杂度，所以它适用于需要用Factory类创建少量对象的场合。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
 <li>Factory类负责相关所有对象的创建，职责过重，复杂度高</li>
-<li>添加新产品时必须修改Factory类，违背开闭原则<h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5></li>
+<li>添加新产品时必须修改Factory类，违背开闭原则</li>
+</ul>
+<h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5><ul>
 <li>需要创建的对象不多时，Factory类复杂度不会太高</li>
 <li>客户端只需要知道传入的参数，对如何创建对象并不关心</li>
 </ul>
