@@ -278,6 +278,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/03/designPattern/abstract_factory_pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="on the way">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/03/designPattern/abstract_factory_pattern/" itemprop="url">抽象工厂模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T00:00:00+08:00">
+                2017-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/03/designPattern/abstract_factory_pattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/03/designPattern/abstract_factory_pattern/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/03/designPattern/abstract_factory_pattern/" class="leancloud_visitors" data-flag-title="抽象工厂模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><hr>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>工厂方法模式为了解决工厂类责任过重的问题，引入了工厂等级结构。但是工厂方法模式一个Factory类只生产一个产品，这样势必会造成类数目暴涨问题，带来额外系统开销。可以用抽象工厂模式来解决这个问题。</p>
+<ul>
+<li>定义： 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式为创建一组对象提供了一种解决方案。  结构图如下：</li>
+</ul>
+<p><img src="https://ww1.sinaimg.cn/large/006AS6e0gy1fm3hhqdo98j30lp0hrgpl.jpg" alt="抽象工厂模式"></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>上面的定义和结构图看着可能云里雾里的，直接看代码好了。以我喜欢吃的水果为例子。水果通常分果皮、果肉、果核。吃水果之前我们一般需要判断下哪部分可以吃…</p>
+<p>首先建立Factory与Product接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//水果工厂</div><div class="line">public interface FruitFactory &#123;</div><div class="line">    public Peel createPeel();</div><div class="line">    public Flesh createFlesh();</div><div class="line">    public Kernel createKernel();</div><div class="line">&#125;</div><div class="line">//果皮</div><div class="line">public interface Peel &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div><div class="line">//果肉</div><div class="line">public interface Flesh &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div><div class="line">//果核</div><div class="line">public interface Kernel &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着建立ConcreteFactory 与ConcreteProcduct<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class AppleFactory implements FruitFactory &#123;</div><div class="line">    @Override</div><div class="line">    public Peel createPeel() &#123;</div><div class="line">        return new ApplePeel();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Flesh createFlesh() &#123;</div><div class="line">        return new AppleFlesh();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Kernel createKernel() &#123;</div><div class="line">        return new AppleKernel();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class ApplePeel implements Peel &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果皮可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class AppleFlesh implements Flesh &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果果肉可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class AppleKernel implements Kernel &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果核不可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>看下运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class EatFruit &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        FruitFactory fruit = new AppleFactory();</div><div class="line">        fruit.createPeel().isEat();</div><div class="line">        fruit.createFlesh().isEat();</div><div class="line">        fruit.createKernel().isEat();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">运行结果：</div><div class="line">苹果皮可以吃！</div><div class="line">苹果果肉可以吃！</div><div class="line">苹果核不可以吃！</div></pre></td></tr></table></figure></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>可以看到抽象工厂模式是将一系列有共同特征的对象封装在一起（使用一个工厂来创建），将来系统扩展时也比较方便，有效地减少了程序中的类的数目。</p>
+<p>但是也有缺点。就上例而言，假如我们要新增桃子类，写个1个桃子工厂类再写3个产品类就可以，不用修改已有代码，很方便，符合开闭原则。但是如果要新增香蕉类呢，香蕉没果核啊，是不是需要改动一系列接口？这个也是抽象工厂的最大的缺点了。可以说其满足纵向（<strong>产品族 </strong>）的开闭原则，而不满足横向（<strong>产品等级</strong>）的开闭原则。具体应用场景视情况而定,不要生搬硬套。</p>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>更改产品等级比较麻烦，违反开闭原则</li>
+</ul>
+<h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5><ul>
+<li>具体产品在逻辑上属于同一产品族，具有共同约束，比如苹果、梨子都有果肉</li>
+<li>产品等级比较稳定，不会对已有产品等级进行修改，比如系统需求稳定了，不会让你再往里加香蕉…</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/designPattern/factory_method_pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2034,199 +2216,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/17/regx/regx_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LiQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="on the way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/05/17/regx/regx_base/" itemprop="url">正则表达式基础符号概念</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-17T00:00:00+08:00">
-                2016-05-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/05/17/regx/regx_base/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/05/17/regx/regx_base/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/05/17/regx/regx_base/" class="leancloud_visitors" data-flag-title="正则表达式基础符号概念">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…</p>
-<hr>
-<h5 id="句点符号"><a href="#句点符号" class="headerlink" title="句点符号"></a>句点符号</h5><p><strong>.</strong> 任意单个字符  </p>
-<p>例：<strong>a.b</strong> 匹配三位长度字符串，中间任意字符；如<strong>a b</strong>，<strong>a1b</strong>，<strong>a-b</strong>等</p>
-<hr>
-<h5 id="方括号-圆括号"><a href="#方括号-圆括号" class="headerlink" title="方括号 圆括号"></a>方括号 圆括号</h5><p><strong>[]</strong> 单字符长度范围， <strong>()</strong> 分组（不限长度）  </p>
-<p>例：<strong>a[123]b</strong> 匹配三位长度字符串，中间指定字符；如<strong>a1b</strong>,<strong>a2b</strong>,<strong>a3b</strong>，<strong>()</strong>用法同理</p>
-<hr>
-<h5 id="或符号"><a href="#或符号" class="headerlink" title="或符号"></a>或符号</h5><p><strong>|</strong> 或运算</p>
-<p>例：<strong>(a|b|cc)</strong> 匹配a或b或cc，此处不可使用 <strong>[]</strong> </p>
-<hr>
-<h5 id="星号"><a href="#星号" class="headerlink" title="星号"></a>星号</h5><p><strong>*</strong> 匹配左边字符0次<strong>或</strong>多次</p>
-<p>例：<strong>a*[b]</strong> 匹配最后一位字符是b,前面字符全为a的字串<strong>或</strong>单个b字符，如<strong>ab</strong>，<strong>aaab</strong>，<strong>b</strong>   </p>
-<hr>
-<h5 id="加号"><a href="#加号" class="headerlink" title="加号"></a>加号</h5><p><strong>+</strong> 匹配左边字符1次<strong>或</strong>多次    </p>
-<p>例: <strong>a+[b]</strong> 匹配第二位是b字符，b字符前面一个<strong>或</strong>多个a字符的字符串，如<strong>aab</strong>，<strong>ab</strong>,<strong>aaab</strong>  </p>
-<hr>
-<h5 id="问号"><a href="#问号" class="headerlink" title="问号"></a>问号</h5><p><strong>\?</strong> 匹配左边字符0次<strong>或</strong>一次（有或无此字符-&gt;有此字符也满足条件）</p>
-<p>例：<strong>a?[ab]</strong> 匹配左边有a字符或无a字符，第二位为a或b的字符串，如<strong>a</strong>，<strong>ab</strong>，<strong>b</strong></p>
-<hr>
-<h5 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h5><p><strong>{n} | {m-n}</strong> 匹配左边字符恰好n次 或 m-n 次（连续性）</p>
-<p>例：<strong>a{3}b</strong>只匹配字符串<strong>aaab</strong>  </p>
-<hr>
-<h5 id="否符号"><a href="#否符号" class="headerlink" title="否符号"></a>否符号</h5><p><strong>^</strong> 非运算  </p>
-<p>例：<strong>[^a]b</strong>匹配第一个字符不是a，第二个字符是b的字符串</p>
-<hr>
-<h5 id="常用正则表达式符号"><a href="#常用正则表达式符号" class="headerlink" title="常用正则表达式符号"></a>常用正则表达式符号</h5><p><strong>\s</strong> 等价于 <strong>[\t\n\r\f]</strong>              即tab制表符、换行符、回车符、换页符，其一，也就是空白字符</p>
-<p><strong>\d</strong>等价于 <strong>[0-9]</strong> 也就是数字字符</p>
-<p><strong>\w</strong>等价于 <strong>[A-Z0-9]</strong> 也就是字符，字母字符无论大小写都匹配哦</p>
-<p><strong>\S</strong> <strong>\D</strong> <strong>\W</strong> 即上面三种符号定义的“非”逻辑</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2279,7 +2268,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

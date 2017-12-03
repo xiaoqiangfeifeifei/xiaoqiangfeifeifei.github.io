@@ -278,6 +278,199 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/17/regx/regx_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="on the way">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/17/regx/regx_base/" itemprop="url">正则表达式基础符号概念</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-17T00:00:00+08:00">
+                2016-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/17/regx/regx_base/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/05/17/regx/regx_base/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/05/17/regx/regx_base/" class="leancloud_visitors" data-flag-title="正则表达式基础符号概念">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在项目中解析文件部分使用java Pattern与Matcher类，自然少不了正则啦，在此将正则基础符号概念部分总结一下，比较精简…</p>
+<hr>
+<h5 id="句点符号"><a href="#句点符号" class="headerlink" title="句点符号"></a>句点符号</h5><p><strong>.</strong> 任意单个字符  </p>
+<p>例：<strong>a.b</strong> 匹配三位长度字符串，中间任意字符；如<strong>a b</strong>，<strong>a1b</strong>，<strong>a-b</strong>等</p>
+<hr>
+<h5 id="方括号-圆括号"><a href="#方括号-圆括号" class="headerlink" title="方括号 圆括号"></a>方括号 圆括号</h5><p><strong>[]</strong> 单字符长度范围， <strong>()</strong> 分组（不限长度）  </p>
+<p>例：<strong>a[123]b</strong> 匹配三位长度字符串，中间指定字符；如<strong>a1b</strong>,<strong>a2b</strong>,<strong>a3b</strong>，<strong>()</strong>用法同理</p>
+<hr>
+<h5 id="或符号"><a href="#或符号" class="headerlink" title="或符号"></a>或符号</h5><p><strong>|</strong> 或运算</p>
+<p>例：<strong>(a|b|cc)</strong> 匹配a或b或cc，此处不可使用 <strong>[]</strong> </p>
+<hr>
+<h5 id="星号"><a href="#星号" class="headerlink" title="星号"></a>星号</h5><p><strong>*</strong> 匹配左边字符0次<strong>或</strong>多次</p>
+<p>例：<strong>a*[b]</strong> 匹配最后一位字符是b,前面字符全为a的字串<strong>或</strong>单个b字符，如<strong>ab</strong>，<strong>aaab</strong>，<strong>b</strong>   </p>
+<hr>
+<h5 id="加号"><a href="#加号" class="headerlink" title="加号"></a>加号</h5><p><strong>+</strong> 匹配左边字符1次<strong>或</strong>多次    </p>
+<p>例: <strong>a+[b]</strong> 匹配第二位是b字符，b字符前面一个<strong>或</strong>多个a字符的字符串，如<strong>aab</strong>，<strong>ab</strong>,<strong>aaab</strong>  </p>
+<hr>
+<h5 id="问号"><a href="#问号" class="headerlink" title="问号"></a>问号</h5><p><strong>\?</strong> 匹配左边字符0次<strong>或</strong>一次（有或无此字符-&gt;有此字符也满足条件）</p>
+<p>例：<strong>a?[ab]</strong> 匹配左边有a字符或无a字符，第二位为a或b的字符串，如<strong>a</strong>，<strong>ab</strong>，<strong>b</strong></p>
+<hr>
+<h5 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h5><p><strong>{n} | {m-n}</strong> 匹配左边字符恰好n次 或 m-n 次（连续性）</p>
+<p>例：<strong>a{3}b</strong>只匹配字符串<strong>aaab</strong>  </p>
+<hr>
+<h5 id="否符号"><a href="#否符号" class="headerlink" title="否符号"></a>否符号</h5><p><strong>^</strong> 非运算  </p>
+<p>例：<strong>[^a]b</strong>匹配第一个字符不是a，第二个字符是b的字符串</p>
+<hr>
+<h5 id="常用正则表达式符号"><a href="#常用正则表达式符号" class="headerlink" title="常用正则表达式符号"></a>常用正则表达式符号</h5><p><strong>\s</strong> 等价于 <strong>[\t\n\r\f]</strong>              即tab制表符、换行符、回车符、换页符，其一，也就是空白字符</p>
+<p><strong>\d</strong>等价于 <strong>[0-9]</strong> 也就是数字字符</p>
+<p><strong>\w</strong>等价于 <strong>[A-Z0-9]</strong> 也就是字符，字母字符无论大小写都匹配哦</p>
+<p><strong>\S</strong> <strong>\D</strong> <strong>\W</strong> 即上面三种符号定义的“非”逻辑</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/23/fixBug/URL_ChineseParameter_MessyCode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -485,7 +678,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

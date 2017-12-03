@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="设计模式," />
+  <meta name="keywords" content="设计模式,创建型模式," />
 
 
 
@@ -95,18 +95,20 @@
 
 
 
-<meta name="description" content="面向对象的设计原则 在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。下面简单阐述下各个设计原则的概念。 单一职责原则（Single Responsibility Principle, SRP） 定义：一个类只负责一个功能领域中的相应职责 理解： 类的设计不能太臃肿，避免造成不可复用、维护不便等问题。比如WEB">
-<meta name="keywords" content="设计模式">
+<meta name="description" content="抽象工厂模式 概念工厂方法模式为了解决工厂类责任过重的问题，引入了工厂等级结构。但是工厂方法模式一个Factory类只生产一个产品，这样势必会造成类数目暴涨问题，带来额外系统开销。可以用抽象工厂模式来解决这个问题。  定义： 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式为创建一组对象提供了一种解决">
+<meta name="keywords" content="设计模式,创建型模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象的设计原则">
-<meta property="og:url" content="http://yoursite.com/2017/11/26/designPattern/design_pattern_principle/index.html">
+<meta property="og:title" content="抽象工厂模式">
+<meta property="og:url" content="http://yoursite.com/2017/12/03/designPattern/abstract_factory_pattern/index.html">
 <meta property="og:site_name" content="on the way">
-<meta property="og:description" content="面向对象的设计原则 在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。下面简单阐述下各个设计原则的概念。 单一职责原则（Single Responsibility Principle, SRP） 定义：一个类只负责一个功能领域中的相应职责 理解： 类的设计不能太臃肿，避免造成不可复用、维护不便等问题。比如WEB">
+<meta property="og:description" content="抽象工厂模式 概念工厂方法模式为了解决工厂类责任过重的问题，引入了工厂等级结构。但是工厂方法模式一个Factory类只生产一个产品，这样势必会造成类数目暴涨问题，带来额外系统开销。可以用抽象工厂模式来解决这个问题。  定义： 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式为创建一组对象提供了一种解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-28T08:14:54.724Z">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1fm3hhqdo98j30lp0hrgpl.jpg">
+<meta property="og:updated_time" content="2017-12-03T09:59:29.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象的设计原则">
-<meta name="twitter:description" content="面向对象的设计原则 在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。下面简单阐述下各个设计原则的概念。 单一职责原则（Single Responsibility Principle, SRP） 定义：一个类只负责一个功能领域中的相应职责 理解： 类的设计不能太臃肿，避免造成不可复用、维护不便等问题。比如WEB">
+<meta name="twitter:title" content="抽象工厂模式">
+<meta name="twitter:description" content="抽象工厂模式 概念工厂方法模式为了解决工厂类责任过重的问题，引入了工厂等级结构。但是工厂方法模式一个Factory类只生产一个产品，这样势必会造成类数目暴涨问题，带来额外系统开销。可以用抽象工厂模式来解决这个问题。  定义： 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式为创建一组对象提供了一种解决">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1fm3hhqdo98j30lp0hrgpl.jpg">
 
 
 
@@ -136,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/26/designPattern/design_pattern_principle/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/03/designPattern/abstract_factory_pattern/"/>
 
 
 
 
 
-  <title>面向对象的设计原则 | on the way</title>
+  <title>抽象工厂模式 | on the way</title>
   
 
 
@@ -279,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/designPattern/design_pattern_principle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/03/designPattern/abstract_factory_pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiQiang">
@@ -296,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面向对象的设计原则</h1>
+          <h1 class="post-title" itemprop="name headline">抽象工厂模式</h1>
         
 
         <div class="post-meta">
@@ -308,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-26T00:00:00+08:00">
-                2017-11-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T00:00:00+08:00">
+                2017-12-03
               </time>
             
 
@@ -349,9 +351,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/26/designPattern/design_pattern_principle/#comments" itemprop="discussionUrl">
+                <a href="/2017/12/03/designPattern/abstract_factory_pattern/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/26/designPattern/design_pattern_principle/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/12/03/designPattern/abstract_factory_pattern/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,7 +361,7 @@
 
           
           
-             <span id="/2017/11/26/designPattern/design_pattern_principle/" class="leancloud_visitors" data-flag-title="面向对象的设计原则">
+             <span id="/2017/12/03/designPattern/abstract_factory_pattern/" class="leancloud_visitors" data-flag-title="抽象工厂模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,35 +392,24 @@
       
 
       
-        <h2 id="面向对象的设计原则"><a href="#面向对象的设计原则" class="headerlink" title="面向对象的设计原则"></a>面向对象的设计原则</h2><hr>
-<p>在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。下面简单阐述下各个设计原则的概念。</p>
-<h3 id="单一职责原则（Single-Responsibility-Principle-SRP）"><a href="#单一职责原则（Single-Responsibility-Principle-SRP）" class="headerlink" title="单一职责原则（Single Responsibility Principle, SRP）"></a>单一职责原则（Single Responsibility Principle, SRP）</h3><ul>
-<li>定义：一个类只负责一个功能领域中的相应职责</li>
-<li>理解： 类的设计不能太臃肿，避免造成不可复用、维护不便等问题。比如WEB系统MVC分层设计就包含了单一职责原则思想，DAO层可以被复用，也便于维护。</li>
+        <h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><hr>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>工厂方法模式为了解决工厂类责任过重的问题，引入了工厂等级结构。但是工厂方法模式一个Factory类只生产一个产品，这样势必会造成类数目暴涨问题，带来额外系统开销。可以用抽象工厂模式来解决这个问题。</p>
+<ul>
+<li>定义： 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式为创建一组对象提供了一种解决方案。  结构图如下：</li>
 </ul>
-<h3 id="开闭原则（Open-Closed-Principle-OCP）"><a href="#开闭原则（Open-Closed-Principle-OCP）" class="headerlink" title="开闭原则（Open-Closed Principle, OCP）"></a>开闭原则（Open-Closed Principle, OCP）</h3><ul>
-<li>定义：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。</li>
-<li>理解：抽象化是开闭原则的关键，类的结构设计应具有抽象化的思想，当增加修改时不应大幅度改变原代码结构。java抽象类与接口的概念符合开闭原则，当修改类功能时直接扩展基类就可以。</li>
+<p><img src="https://ww1.sinaimg.cn/large/006AS6e0gy1fm3hhqdo98j30lp0hrgpl.jpg" alt="抽象工厂模式"></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>上面的定义和结构图看着可能云里雾里的，直接看代码好了。以我喜欢吃的水果为例子。水果通常分果皮、果肉、果核。吃水果之前我们一般需要判断下哪部分可以吃…</p>
+<p>首先建立Factory与Product接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//水果工厂</div><div class="line">public interface FruitFactory &#123;</div><div class="line">    public Peel createPeel();</div><div class="line">    public Flesh createFlesh();</div><div class="line">    public Kernel createKernel();</div><div class="line">&#125;</div><div class="line">//果皮</div><div class="line">public interface Peel &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div><div class="line">//果肉</div><div class="line">public interface Flesh &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div><div class="line">//果核</div><div class="line">public interface Kernel &#123;</div><div class="line">    public void isEat();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着建立ConcreteFactory 与ConcreteProcduct<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class AppleFactory implements FruitFactory &#123;</div><div class="line">    @Override</div><div class="line">    public Peel createPeel() &#123;</div><div class="line">        return new ApplePeel();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Flesh createFlesh() &#123;</div><div class="line">        return new AppleFlesh();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Kernel createKernel() &#123;</div><div class="line">        return new AppleKernel();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class ApplePeel implements Peel &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果皮可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class AppleFlesh implements Flesh &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果果肉可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class AppleKernel implements Kernel &#123;</div><div class="line">    @Override</div><div class="line">    public void isEat() &#123;</div><div class="line">        System.out.println(&quot;苹果核不可以吃！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>看下运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class EatFruit &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        FruitFactory fruit = new AppleFactory();</div><div class="line">        fruit.createPeel().isEat();</div><div class="line">        fruit.createFlesh().isEat();</div><div class="line">        fruit.createKernel().isEat();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">运行结果：</div><div class="line">苹果皮可以吃！</div><div class="line">苹果果肉可以吃！</div><div class="line">苹果核不可以吃！</div></pre></td></tr></table></figure></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>可以看到抽象工厂模式是将一系列有共同特征的对象封装在一起（使用一个工厂来创建），将来系统扩展时也比较方便，有效地减少了程序中的类的数目。</p>
+<p>但是也有缺点。就上例而言，假如我们要新增桃子类，写个1个桃子工厂类再写3个产品类就可以，不用修改已有代码，很方便，符合开闭原则。但是如果要新增香蕉类呢，香蕉没果核啊，是不是需要改动一系列接口？这个也是抽象工厂的最大的缺点了。可以说其满足纵向（<strong>产品族 </strong>）的开闭原则，而不满足横向（<strong>产品等级</strong>）的开闭原则。具体应用场景视情况而定,不要生搬硬套。</p>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>更改产品等级比较麻烦，违反开闭原则</li>
 </ul>
-<h3 id="里氏代换原则（Liskov-Substitution-Principle-LSP）"><a href="#里氏代换原则（Liskov-Substitution-Principle-LSP）" class="headerlink" title="里氏代换原则（Liskov Substitution Principle, LSP）"></a>里氏代换原则（Liskov Substitution Principle, LSP）</h3><ul>
-<li>定义：所有引用基类（父类）的地方必须能透明地使用其子类的对象。</li>
-<li>理解：里氏代换原则是开闭原则的具体实现手段之一。在传递参数、声明类型、定义变量时都可使用里氏代换原则，也就是用基类（抽象类、接口）来定义类型，待到运行时才确定具体子类类型。</li>
-</ul>
-<h3 id="依赖倒转原则-Dependency-Inversion-Principle-DIP"><a href="#依赖倒转原则-Dependency-Inversion-Principle-DIP" class="headerlink" title="依赖倒转原则(Dependency Inversion Principle, DIP)"></a>依赖倒转原则(Dependency Inversion Principle, DIP)</h3><ul>
-<li>定义：抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。</li>
-<li>理解：实现依赖倒转原则时，针对抽象编程。将具体类的对象通过依赖注入具体注入到其他对象中。（感觉与里氏代换原则很像，分不清…这里理解为里氏代换原则是基础，依赖倒转原则为具体实现）</li>
-</ul>
-<h3 id="接口隔离原则（Interface-Segregation-Principle-ISP）"><a href="#接口隔离原则（Interface-Segregation-Principle-ISP）" class="headerlink" title="接口隔离原则（Interface Segregation Principle, ISP）"></a>接口隔离原则（Interface Segregation Principle, ISP）</h3><ul>
-<li>定义：使用多个专门的接口，而不使用单一的总接口。</li>
-<li>理解：接口的粒度必须控制得当，太小会使系统中接口暴增，不利于维护。太大则灵活性较差，且违背单一职责原则。</li>
-</ul>
-<h3 id="合成复用原则（Composite-Reuse-Principle-CRP）"><a href="#合成复用原则（Composite-Reuse-Principle-CRP）" class="headerlink" title="合成复用原则（Composite Reuse Principle, CRP）"></a>合成复用原则（Composite Reuse Principle, CRP）</h3><ul>
-<li>定义：尽量使用对象组合，而不是继承来达到复用的目的。</li>
-<li>理解：继承的依赖性相对较强，修改时牵一发而动全身。若两个类之间的关系不是严格的类别关系，而是某个点的职责关系，优先考虑使用合成复用原则。</li>
-</ul>
-<h3 id="迪米特法则（Law-of-Demeter-LoD）"><a href="#迪米特法则（Law-of-Demeter-LoD）" class="headerlink" title="迪米特法则（Law of Demeter, LoD）"></a>迪米特法则（Law of Demeter, LoD）</h3><ul>
-<li>定义： 一个软件实体应当尽可能少地与其他实体发生相互作用。</li>
-<li>理解：当前类不要与没有直接关系的类进行消息传递。如必要可以使用中间类（Mediator）来达到松耦合的目的。</li>
+<h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5><ul>
+<li>具体产品在逻辑上属于同一产品族，具有共同约束，比如苹果、梨子都有果肉</li>
+<li>产品等级比较稳定，不会对已有产品等级进行修改，比如系统需求稳定了，不会让你再往里加香蕉…</li>
 </ul>
 
       
@@ -439,6 +430,8 @@
           
             <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
+            <a href="/tags/创建型模式/" rel="tag"># 创建型模式</a>
+          
         </div>
       
 
@@ -450,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/linux/linux_command/" rel="next" title="linux常用命令">
-                <i class="fa fa-chevron-left"></i> linux常用命令
+              <a href="/2017/12/01/designPattern/factory_method_pattern/" rel="next" title="工厂方法模式">
+                <i class="fa fa-chevron-left"></i> 工厂方法模式
               </a>
             
           </div>
@@ -459,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/28/designPattern/simple_factory_pattern/" rel="prev" title="简单工厂模式">
-                简单工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -629,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的设计原则"><span class="nav-number">1.</span> <span class="nav-text">面向对象的设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一职责原则（Single-Responsibility-Principle-SRP）"><span class="nav-number">1.1.</span> <span class="nav-text">单一职责原则（Single Responsibility Principle, SRP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开闭原则（Open-Closed-Principle-OCP）"><span class="nav-number">1.2.</span> <span class="nav-text">开闭原则（Open-Closed Principle, OCP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#里氏代换原则（Liskov-Substitution-Principle-LSP）"><span class="nav-number">1.3.</span> <span class="nav-text">里氏代换原则（Liskov Substitution Principle, LSP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖倒转原则-Dependency-Inversion-Principle-DIP"><span class="nav-number">1.4.</span> <span class="nav-text">依赖倒转原则(Dependency Inversion Principle, DIP)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口隔离原则（Interface-Segregation-Principle-ISP）"><span class="nav-number">1.5.</span> <span class="nav-text">接口隔离原则（Interface Segregation Principle, ISP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合成复用原则（Composite-Reuse-Principle-CRP）"><span class="nav-number">1.6.</span> <span class="nav-text">合成复用原则（Composite Reuse Principle, CRP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迪米特法则（Law-of-Demeter-LoD）"><span class="nav-number">1.7.</span> <span class="nav-text">迪米特法则（Law of Demeter, LoD）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象工厂模式"><span class="nav-number">1.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">1.0.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.0.3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#适用场景"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">适用场景</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -769,9 +758,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/11/26/designPattern/design_pattern_principle/';
-          this.page.identifier = '2017/11/26/designPattern/design_pattern_principle/';
-          this.page.title = '面向对象的设计原则';
+          this.page.url = 'http://yoursite.com/2017/12/03/designPattern/abstract_factory_pattern/';
+          this.page.identifier = '2017/12/03/designPattern/abstract_factory_pattern/';
+          this.page.title = '抽象工厂模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://liqiangcoder.disqus.com/embed.js';
