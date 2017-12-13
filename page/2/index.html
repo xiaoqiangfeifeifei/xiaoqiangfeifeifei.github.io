@@ -278,6 +278,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/wexin/weixin_web_OrdinaryRedPacket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="on the way">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/25/wexin/weixin_web_OrdinaryRedPacket/" itemprop="url">微信公众平台普通红包发放</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T00:00:00+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/25/wexin/weixin_web_OrdinaryRedPacket/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/25/wexin/weixin_web_OrdinaryRedPacket/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/25/wexin/weixin_web_OrdinaryRedPacket/" class="leancloud_visitors" data-flag-title="微信公众平台普通红包发放">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>业务需求：在后台管理系统为微信用户发放红包，弄了好几天总算搞定了，需要注意的是获取签名部分，流程大体如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div></pre></td><td class="code"><pre><div class="line">//红包业务方法</div><div class="line">public int sendRedpack(HttpServletRequest request,UserAverage userAverage) throws Exception &#123;</div><div class="line">    WechatInfo wechat = getWechatInfo(request);</div><div class="line">    WechatInfo wechatInfo = wechatInfoService.queryWechatinfo(wechat.getAppid());</div><div class="line">    String sendName =wechatInfo.getWxname();</div><div class="line">    //微信证书路径</div><div class="line">    String certPath =this.getClass().getResource(&quot;/&quot;).getPath()+&quot;xxxxx/apiclient_cert.p12&quot;;</div><div class="line">    certPath = URLDecoder.decode(certPath,&quot;UTF-8&quot;);//证书路径解码</div><div class="line">    logger.info(&quot;证书路径:&quot;+certPath);</div><div class="line">    //商户id</div><div class="line">    String wxappid = wechatInfo.getAppid();</div><div class="line">    // 微信支付分配的商户号</div><div class="line">    String partner = wechatInfo.getPartnerid();</div><div class="line">    //API密钥</div><div class="line">    String paternerKey =wechatInfo.getPartnerkey();</div><div class="line">    /**</div><div class="line">     * 发送普通红包</div><div class="line">     */</div><div class="line">    boolean isSend = sendredpack(wechatInfo,request, &quot;100&quot;, &quot;1&quot;, &quot;恭喜您获得竞赛奖金！&quot;,</div><div class="line">            &quot;竞赛答题活动&quot;, &quot;竞赛奖金&quot;, userAverage.getOpenid(),</div><div class="line">            partner, wxappid, sendName, paternerKey, certPath);</div><div class="line">    if(!isSend)&#123;</div><div class="line">    	return 0;</div><div class="line">    &#125;</div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line">//  主封装方法</div><div class="line">//  * @param request 获取IP</div><div class="line">//  * @param total_amount  付款现金(单位分)</div><div class="line">//  * @param total_num 红包发放总人数</div><div class="line">//  * @param wishing 红包祝福语</div><div class="line">//  * @param act_name 活动名称</div><div class="line">//  * @param remark 备注</div><div class="line">//  * @param reOpenid 用户openid</div><div class="line">//  * @param partner 商户号</div><div class="line">//  * @param wxappid 公众账号appid</div><div class="line">//  * @param sendName 商户名称</div><div class="line">//  * @param paternerKey 商户签名key</div><div class="line">//  * @param certPath 证书路径</div><div class="line">//  * @return</div><div class="line">//  */</div><div class="line"> public static boolean sendredpack(WechatInfo wechatInfo,HttpServletRequest request,String total_amount,String total_num,String wishing,String act_name,String remark,String reOpenid,String partner,String wxappid,String sendName,String paternerKey,String certPath) throws Exception&#123; </div><div class="line">	 // 商户订单号</div><div class="line">     String mchBillno = RedPackUtil.createBillNo(wechatInfo);</div><div class="line">     String ip =&quot;xxx.xx.xxx.xx&quot;;//服务器IP </div><div class="line">     Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();</div><div class="line">     // 随机字符串</div><div class="line">     params.put(&quot;nonce_str&quot;, RedPackUtil.createNonce_str());</div><div class="line">     // 商户订单号</div><div class="line">     params.put(&quot;mch_billno&quot;, mchBillno);</div><div class="line">     // 商户号</div><div class="line">     params.put(&quot;mch_id&quot;, partner);</div><div class="line">     // 公众账号ID</div><div class="line">     params.put(&quot;wxappid&quot;, wxappid);</div><div class="line">     // 商户名称</div><div class="line">     params.put(&quot;send_name&quot;, sendName);</div><div class="line">     // 用户OPENID</div><div class="line">     params.put(&quot;re_openid&quot;, reOpenid);</div><div class="line">     // 付款现金(单位分)</div><div class="line">     params.put(&quot;total_amount&quot;, total_amount);</div><div class="line">     // 红包发放总人数</div><div class="line">     params.put(&quot;total_num&quot;, total_num);</div><div class="line">     // 红包祝福语</div><div class="line">     params.put(&quot;wishing&quot;, wishing);</div><div class="line">     // 终端IP</div><div class="line">     params.put(&quot;client_ip&quot;, ip);</div><div class="line">     // 活动名称</div><div class="line">     params.put(&quot;act_name&quot;, act_name);</div><div class="line">     // 备注</div><div class="line">     params.put(&quot;remark&quot;, remark);</div><div class="line">     //创建签名</div><div class="line">     String sign = RedPackUtil.redSignal(params, paternerKey);</div><div class="line">     logger.info(&quot;md5签名：&quot;+sign);</div><div class="line">     params.put(&quot;sign&quot;, sign);</div><div class="line">     String xmlResult = RedPackUtil.sendRedPack(params, certPath, partner);//执行发送红包</div><div class="line">     logger.info(&quot;发送红包返回结果：&quot;+xmlResult.toString());</div><div class="line">     Map&lt;String, String&gt; result = XMLUtil.xml2Map(xmlResult);</div><div class="line">     logger.info(&quot;红包参数：&quot;+result.toString());</div><div class="line">     //此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断</div><div class="line">     String return_code = result.get(&quot;return_code&quot;);</div><div class="line">     //业务结果</div><div class="line">     String result_code = result.get(&quot;result_code&quot;);</div><div class="line">     if (StringUtils.isNotBlank(return_code) &amp;&amp; &quot;SUCCESS&quot;.equals(return_code)) &#123;</div><div class="line">    	 logger.info(&quot;通信成功return_code：&quot;+return_code);</div><div class="line">	         if (StringUtils.isNotBlank(result_code) &amp;&amp; &quot;SUCCESS&quot;.equals(result_code)) &#123;</div><div class="line">	        	 logger.info(&quot;发送成功result_code：&quot;+result_code);</div><div class="line">	             return true;</div><div class="line">	         &#125;else&#123;</div><div class="line">	        	 logger.info(&quot;发送失败result_code：&quot;+result_code);</div><div class="line">	         &#125;</div><div class="line">     &#125;else&#123;</div><div class="line">    	 logger.info(&quot;通信失败return_code：&quot;+return_code); </div><div class="line">     &#125;</div><div class="line">     return false;</div><div class="line"> &#125;</div><div class="line"> /**</div><div class="line"> * 生成商户订单号</div><div class="line"> * @param mch_id  商户号</div><div class="line"> * @param userId  该用户的userID</div><div class="line"> * @return</div><div class="line"> */</div><div class="line">public static String createBillNo(WechatInfo wechatInfo)&#123;</div><div class="line">	//组成： mch_id+yyyymmdd+10位一天内不能重复的数字</div><div class="line">	//10位一天内不能重复的数字实现方法如下:</div><div class="line">	//因为每个用户绑定了userId,他们的userId不同,加上随机生成的(10-length(userId))可保证这10位数字不一样</div><div class="line">	Date dt=new Date();</div><div class="line">	SimpleDateFormat df = new SimpleDateFormat(&quot;yyyymmdd&quot;);</div><div class="line">	String nowTime= df.format(dt);</div><div class="line">	int length = 10 ;</div><div class="line">	return wechatInfo.getPartnerid() + nowTime  + getRandomNum(length);</div><div class="line">&#125;</div><div class="line">/**</div><div class="line"> * 生成红包参数随机数nonce_str</div><div class="line"> * @return</div><div class="line"> */</div><div class="line">public static String createNonce_str()&#123;</div><div class="line">	return System.currentTimeMillis()/1000+getRandomNum(5);</div><div class="line">&#125;</div><div class="line">/**</div><div class="line"> * 生成特定位数的随机数字</div><div class="line"> * @param length</div><div class="line"> * @return</div><div class="line"> */</div><div class="line">public static String getRandomNum(int length) &#123;</div><div class="line">	String val = &quot;&quot;;</div><div class="line">	Random random = new Random();</div><div class="line">	for (int i = 0; i &lt; length; i++) &#123;</div><div class="line">		val += String.valueOf(random.nextInt(10));</div><div class="line">	&#125;</div><div class="line">	return val;</div><div class="line">&#125;</div><div class="line">/**</div><div class="line">* @Title: redSignal </div><div class="line">* @Description: 发送红包签名生成</div><div class="line">* @param @param params</div><div class="line">* @param @return 设定文件 </div><div class="line">* @return String 返回类型 </div><div class="line">* @throws</div><div class="line">*/</div><div class="line">public static String redSignal(Map&lt;String, String&gt; params,String paternerKey) &#123;</div><div class="line">SortedMap&lt;String, String&gt; packageParams = new TreeMap&lt;String, String&gt;();</div><div class="line">for (Map.Entry&lt;String, String&gt; m : params.entrySet()) &#123;</div><div class="line">packageParams.put(m.getKey(), m.getValue().toString());</div><div class="line">&#125;</div><div class="line">StringBuffer sb = new StringBuffer();</div><div class="line">Set&lt;?&gt; es = packageParams.entrySet();</div><div class="line">Iterator&lt;?&gt; it = es.iterator();</div><div class="line">while (it.hasNext()) &#123;</div><div class="line">Map.Entry entry = (Map.Entry) it.next();</div><div class="line">String k = (String) entry.getKey();</div><div class="line">String v = (String) entry.getValue();</div><div class="line">if (!StringUtils.isEmpty(v) &amp;&amp; !&quot;sign&quot;.equals(k) &amp;&amp; !&quot;key&quot;.equals(k)) &#123;</div><div class="line">sb.append(k + &quot;=&quot; + v + &quot;&amp;&quot;);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">sb.append(&quot;key=&quot; + paternerKey);</div><div class="line">System.out.println(&quot;未加密签名：&quot;+sb.toString());</div><div class="line">String sign = MD5Util.MD5Encode(sb.toString(),&quot;UTF-8&quot;).toUpperCase();</div><div class="line">return sign;</div><div class="line">&#125;</div><div class="line">private static String sendRedPackUrl = &quot;https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack&quot;;</div><div class="line">/**</div><div class="line"> * 发送红包</div><div class="line"> * @param params 请求参数</div><div class="line"> * @param certPath 证书文件目录</div><div class="line"> * @param partner 证书密码</div><div class="line"> * @return &#123;String&#125;</div><div class="line"> * @throws Exception </div><div class="line"> */</div><div class="line">public static String sendRedPack(Map&lt;String, String&gt; params, String certPath, String partner) throws Exception &#123;</div><div class="line">    return doSend(sendRedPackUrl, XMLUtil.map2Xmlstring(params), certPath, partner);</div><div class="line">&#125;</div><div class="line">public static String doSend(String url, String data , String certPath , String partner) throws Exception &#123;</div><div class="line">	KeyStore keyStore  = KeyStore.getInstance(&quot;PKCS12&quot;);</div><div class="line">	FileInputStream instream = new FileInputStream(new File(certPath));//P12文件目录</div><div class="line">	        try &#123;</div><div class="line">	            keyStore.load(instream, partner.toCharArray());//这里写密码..默认是你的MCHID</div><div class="line">	        &#125; finally &#123;</div><div class="line">	            instream.close();</div><div class="line">	        &#125;</div><div class="line">	        SSLContext sslcontext = SSLContexts.custom()</div><div class="line">	                .loadKeyMaterial(keyStore, partner.toCharArray())//这里也是写密码的</div><div class="line">	                .build();</div><div class="line">	        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] &#123; &quot;TLSv1&quot; &#125;, null,</div><div class="line">	        SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);</div><div class="line">	        CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();</div><div class="line">	        try &#123;</div><div class="line">	        HttpPost httpost = new HttpPost(url);  // 设置响应头信息</div><div class="line">	        httpost.addHeader(&quot;Connection&quot;, &quot;keep-alive&quot;);</div><div class="line">	        httpost.addHeader(&quot;Accept&quot;, &quot;*/*&quot;);</div><div class="line">	        httpost.addHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);</div><div class="line">	        httpost.addHeader(&quot;Host&quot;, &quot;api.mch.weixin.qq.com&quot;);</div><div class="line">	        httpost.addHeader(&quot;X-Requested-With&quot;, &quot;XMLHttpRequest&quot;);</div><div class="line">	        httpost.addHeader(&quot;Cache-Control&quot;, &quot;max-age=0&quot;);</div><div class="line">	        httpost.addHeader(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) &quot;);</div><div class="line">	    httpost.setEntity(new StringEntity(data, &quot;UTF-8&quot;));</div><div class="line">	            CloseableHttpResponse response = httpclient.execute(httpost);</div><div class="line">	            try &#123;</div><div class="line">	                HttpEntity entity = response.getEntity();</div><div class="line">	                String jsonStr = toStringInfo(response.getEntity(),&quot;UTF-8&quot;);</div><div class="line">	                </div><div class="line">	                EntityUtils.consume(entity);</div><div class="line">	               return jsonStr;</div><div class="line">	            &#125; finally &#123;</div><div class="line">	                response.close();</div><div class="line">	            &#125;</div><div class="line">	        &#125; finally &#123;</div><div class="line">	            httpclient.close();</div><div class="line">	        &#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/wexin/weixin_miniProgram_sign/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1046,7 +1210,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
