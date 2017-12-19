@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="设计模式,创建型模式," />
 
 
 
@@ -95,18 +95,20 @@
 
 
 
-<meta name="description" content="linux常用命令 基本操作快捷键  登录shell ctrl+shift+f1-f6 退出shell到图形页面 ctrl+shift+f7   命令补全 tab 暂停正在运行的shell程序执行 ctrl+c 注销shell执行（=exit） ctrl+d    基本操作命令行  修改shell支持语言   查看语言编码格式 echo $LANG  修改语言格式为英文 LANG=en_US 切换">
-<meta name="keywords" content="linux">
+<meta name="description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
+<meta name="keywords" content="设计模式,创建型模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux常用命令">
-<meta property="og:url" content="http://yoursite.com/2017/11/15/linux/linux_command/index.html">
+<meta property="og:title" content="简单工厂模式">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/designPattern/1_simple_factory_pattern/index.html">
 <meta property="og:site_name" content="on the way">
-<meta property="og:description" content="linux常用命令 基本操作快捷键  登录shell ctrl+shift+f1-f6 退出shell到图形页面 ctrl+shift+f7   命令补全 tab 暂停正在运行的shell程序执行 ctrl+c 注销shell执行（=exit） ctrl+d    基本操作命令行  修改shell支持语言   查看语言编码格式 echo $LANG  修改语言格式为英文 LANG=en_US 切换">
+<meta property="og:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-15T06:37:54.765Z">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1flxtdgbkxmj30n70bwju9.jpg">
+<meta property="og:updated_time" content="2017-12-01T08:50:56.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux常用命令">
-<meta name="twitter:description" content="linux常用命令 基本操作快捷键  登录shell ctrl+shift+f1-f6 退出shell到图形页面 ctrl+shift+f7   命令补全 tab 暂停正在运行的shell程序执行 ctrl+c 注销shell执行（=exit） ctrl+d    基本操作命令行  修改shell支持语言   查看语言编码格式 echo $LANG  修改语言格式为英文 LANG=en_US 切换">
+<meta name="twitter:title" content="简单工厂模式">
+<meta name="twitter:description" content="简单工厂模式 使用工厂模式创建对象的好处通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。  一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。 概念简单工厂">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006AS6e0gy1flxtdgbkxmj30n70bwju9.jpg">
 
 
 
@@ -136,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/15/linux/linux_command/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/28/designPattern/1_simple_factory_pattern/"/>
 
 
 
 
 
-  <title>linux常用命令 | on the way</title>
+  <title>简单工厂模式 | on the way</title>
   
 
 
@@ -279,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/linux/linux_command/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/designPattern/1_simple_factory_pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiQiang">
@@ -296,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux常用命令</h1>
+          <h1 class="post-title" itemprop="name headline">简单工厂模式</h1>
         
 
         <div class="post-meta">
@@ -308,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T00:00:00+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T00:00:00+08:00">
+                2017-11-28
               </time>
             
 
@@ -331,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -349,9 +351,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/15/linux/linux_command/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/28/designPattern/1_simple_factory_pattern/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/15/linux/linux_command/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/28/designPattern/1_simple_factory_pattern/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,7 +361,7 @@
 
           
           
-             <span id="/2017/11/15/linux/linux_command/" class="leancloud_visitors" data-flag-title="linux常用命令">
+             <span id="/2017/11/28/designPattern/1_simple_factory_pattern/" class="leancloud_visitors" data-flag-title="简单工厂模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,112 +392,34 @@
       
 
       
-        <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><hr>
-<p><strong><em>基本操作快捷键</em></strong></p>
+        <h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><hr>
+<h5 id="使用工厂模式创建对象的好处"><a href="#使用工厂模式创建对象的好处" class="headerlink" title="使用工厂模式创建对象的好处"></a>使用工厂模式创建对象的好处</h5><p>通常我们在创建对象时最容易想到的就是new操作符，不过new操作符有许多局限：不够灵活，与业务类耦合度过大，也将初始化对象等无关业务细节暴露（我们只是要获取对象，不关心其他，初始化对象等细节操作何不交给其他类来完成？）。 </p>
+<p>一般可以采用工厂模式来解决这类问题。由一个第三方类（Factory类）来创建对象，将对象创建过程封装起来，降低系统耦合度。</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>简单工厂模式（Simple Factory Pattern）并不属于GoF23个经典设计模式，不过它是学习其他工厂模式的基础。概念也比较简单。</p>
 <ul>
-<li>登录shell <strong>ctrl+shift+f1-f6</strong></li>
-<li>退出shell到图形页面 <strong>ctrl+shift+f7</strong>  </li>
-<li>命令补全 <strong>tab</strong></li>
-<li>暂停正在运行的shell程序执行 <strong>ctrl+c</strong></li>
-<li>注销shell执行（=exit） <strong>ctrl+d</strong>  </li>
+<li>定义：定义一个工厂类，里面存在个static方法，根据不同参数返回不同实例，返回的实例通常具有共同父类。结构图如下：</li>
 </ul>
-<p><strong><em>基本操作命令行</em></strong></p>
-<ul>
-<li>修改shell支持语言 </li>
-<li style="list-style: none"><input type="checkbox" checked> 查看语言编码格式 <strong>echo $LANG</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 修改语言格式为英文 <strong>LANG=en_US</strong></li>
-<li>切换用户 <strong>su</strong></li>
-<li>查看日期 <strong>date</strong></li>
-<li>查看日历 <strong>cal</strong></li>
-<li>计算器 <strong>bc</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 显示小数位数（默认整数）<strong>sclae=n</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 离开计算器 <strong>quit</strong></li>
-<li>命令行帮助文档 <strong>man+命令行</strong></li>
-<li>将数据同步写入硬盘（一般root写入）<em>*sync</em></li>
-<li>关机 <strong>shutdown</strong></li>
-<li style="list-style: none"><input type="checkbox"> <strong>-h</strong> 立即关机</li>
-<li style="list-style: none"><input type="checkbox"> <strong>-r</strong> 立即重启</li>
-<li style="list-style: none"><input type="checkbox"> <strong>-k</strong> 只显示消息</li>
-<li style="list-style: none"><input type="checkbox" checked> <strong>shutdown -h +10/20:15 ‘we are readying the linux after 10min/ in 20:15’</strong> 在10分钟后（或于20:15）关机，并且在当前登录此机器的用户屏幕前显示信息</li>
-<li>文件系统检查 <strong>fsck</strong></li>
+<p><img src="https://ww1.sinaimg.cn/large/006AS6e0gy1flxtdgbkxmj30n70bwju9.jpg" alt="简单工厂模式"></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>下面来举个简单的例子吧。想必很多同学都被家里长辈唠叨过怎么还不找女朋友。那我们就拿这个事来举个简单工厂的例子吧。</p>
+<p>首先编写Product与ConcreteProduct类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public abstract class Girl &#123;</div><div class="line">    //女孩的品质</div><div class="line">    public void character() &#123;</div><div class="line">        System.out.println(&quot;我是一个漂亮的，身材棒的女孩！&quot;);</div><div class="line">    &#125;</div><div class="line">    //女孩的名字</div><div class="line">    public abstract void  name ();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class XiaoCao extends Girl &#123;</div><div class="line">    @Override</div><div class="line">    public void name() &#123;</div><div class="line">        System.out.println(&quot;我的名字是小草！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class XiaoHua extends Girl &#123;</div><div class="line">    @Override</div><div class="line">    public void name() &#123;</div><div class="line">        System.out.println(&quot;我的名字是小花！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class XiaoYe extends Girl &#123;</div><div class="line">    @Override</div><div class="line">    public void name() &#123;</div><div class="line">        System.out.println(&quot;我的名字是小叶！&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到，我们创建了一个抽象类，并用这个类实现了三个具体类。</p>
+<p>假如你现在有三个女朋友（不是让你脚踏三只船，只是为了例子说明），Mother要看看她们。我们很容易就想到下面实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Mother &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">       Girl girlFriend = new XiaoCao();//小草</div><div class="line">       girlFriend.character();</div><div class="line">       girlFriend.name();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">运行结果：</div><div class="line">我是一个漂亮的，身材棒的女孩！</div><div class="line">我的名字是小草！</div></pre></td></tr></table></figure>
+<p>看起来很棒，运行结果也没问题。不过Mother看完小草不是那么满意，又想看小花了。或者Father、Sister什么的七大姑八大姨都要来看。这可怎么办，只能修改Mother类了。难道每次换想法我都要改一次吗？有没有一种方法可以直接给他们想要的，需要什么就给什么。</p>
+<p>我们可以建立一个Factory类，你想看哪个直接取就是了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class GirlFactory &#123;</div><div class="line">    public static Girl getGrilFriend (String name) &#123;</div><div class="line">        Girl girl = null;</div><div class="line">        if (name.equals(&quot;小草&quot;)) &#123;</div><div class="line">            girl = new XiaoCao();</div><div class="line">        &#125; else if (name.equals(&quot;小花&quot;)) &#123;</div><div class="line">            girl = new XiaoHua();</div><div class="line">        &#125; else if (name.equals(&quot;小叶&quot;)) &#123;</div><div class="line">            girl = new XiaoYe();</div><div class="line">        &#125;</div><div class="line">        return girl;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Mother类变为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Mother &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">         Girl girlFriend = GirlFactory.getGrilFriend(&quot;小花&quot;);</div><div class="line">         girlFriend.character();</div><div class="line">         girlFriend.name();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">运行结果：</div><div class="line">我是一个漂亮的，身材棒的女孩！</div><div class="line">我的名字是小花！</div></pre></td></tr></table></figure>
+<p>将创建对象的职责交给第三方类(Factory)来执行,来达到解耦合的目的。什么七大姑八大姨想看也直接从Factory里取就是了。</p>
+<p>不过缺点想必大家也可以看出，如果需要增加新的ConcreteProduct类时必须修改Factory类，这违背了开闭原则。当需要创建的对象很多时也势必会增加Factory类的复杂度，所以它适用于需要用Factory类创建少量对象的场合。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>Factory类负责相关所有对象的创建，职责过重，复杂度高</li>
+<li>添加新产品时必须修改Factory类，违背开闭原则</li>
 </ul>
-<hr>
-<p><strong><em>文件管理命令行</em></strong> </p>
-<ul>
-<li>展示所有文件 <strong>ls -al</strong></li>
-<li>展示特定文件夹下文件 <strong>ls -l /../..</strong></li>
-<li>改变文件用户组 <strong>chgrp groupname dirname/filename</strong></li>
-<li>改变文件所有者 <strong>chown ownname [:groupname] dirname/filename</strong></li>
-<li>改变文件权限 <strong>chmod numberList|chatList dirname/filename</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> rwz三种权限对应数字分别为4 2 1,如果将test.text的权限修改为 rwxr<em>xrw</em>，命令也就是 chmod 756 test.text</li>
-<li style="list-style: none"><input type="checkbox" checked> 也可以使用u g o通过+ - =操作符来修改</li>
-<li>创建文件 <strong>touch dirname/filename</strong></li>
-</ul>
-<hr>
-<p><strong><em>文件目录操作</em></strong>  </p>
-<p><strong>特殊符号：</strong>  </p>
-<p>当前目录：  <strong>.</strong><br>上层目录：  <strong>..</strong><br>前一个工作目录： <strong>-</strong><br>当前账户主目录： <strong>~</strong><br>account账户主目录： <strong>~ account</strong>  </p>
-<p><strong>相关命令：</strong>  </p>
-<ul>
-<li>切换目录：<strong>cd</strong></li>
-<li>显示当前目录：<strong>pwd</strong></li>
-<li>创建目录： <strong>mkdir</strong></li>
-<li>删除目录：<strong>rmdir</strong></li>
-<li>移动文件：<strong>mv</strong></li>
-<li>删除文件：<strong>rm</strong></li>
-<li>新建文件： <strong>touch</strong></li>
-<li>赋予文件隐藏属性 ： <strong>chattr</strong> </li>
-<li>新增环境变量：<strong>PATH=”$PATH”:/dirname</strong></li>
-<li>查找执行文件（PATH下）：<strong>which</strong></li>
-<li>查找特定文件: <strong>whereis</strong></li>
-<li>查找本地文件：<strong>locate</strong>(可使用updatedb更新下数据文件再查找，比较耗时)</li>
-<li>详细检索文件(磁盘检索): <strong>find</strong></li>
-<li>查看文件系统属性: <strong>dumpe2fs</strong></li>
-<li>查看当前使用的文件系统: <strong>df</strong></li>
-<li>查看文件系统详情: <strong>du</strong></li>
-<li>磁盘操作: <strong>fdisk</strong> (使用前需用df命令找到文件系统路径)</li>
-<li>磁盘格式化: <strong>mkfs</strong></li>
-<li>挂载命令: <strong>mount</strong></li>
-<li>检查文件系统:<strong>fsck</strong></li>
-<li>文件压缩：<strong>gzip</strong> (.gz)、<strong>bzip2</strong>(.bz2)</li>
-<li style="list-style: none"><input type="checkbox"> 打包压缩（z代表gzip,j代表bzip2）<strong>tar -zpcv -f /root/etc.tar.gz /etc</strong></li>
-<li style="list-style: none"><input type="checkbox"> 查看压缩文件 <strong>tar -ztv -f /root/etc.tar.gz</strong></li>
-<li style="list-style: none"><input type="checkbox"> 解压缩到指定文件夹 <strong>tar -zxv -f /root/etc.tar.gz -C /tmp</strong></li>
-</ul>
-<hr>
-<p><strong><em>bash相关命令</em></strong></p>
-<ul>
-<li>查看环境变量：<strong>env 或  set</strong>  </li>
-<li>取消环境变量 : <strong>unset</strong></li>
-<li>变量键盘读取 : <strong>read</strong></li>
-<li>声明变量类型 : <strong>declare或typeset</strong></li>
-<li>直接写入配置文件: <strong>source 或 .</strong></li>
-</ul>
-<p><strong><em>特殊符号</em></strong></p>
-<ul>
-<li>以覆盖的方法将正确的数据输出：<strong>1&gt;</strong></li>
-<li>以累加的方法将正确的数据输出： <strong>1&gt;&gt;</strong></li>
-<li>以覆盖的方法将错误的数据输出：<strong>2&gt;</strong></li>
-<li>以累加的方法将错误的数据输出：<strong>2&gt;&gt;</strong></li>
-<li>标准输入源  : <strong>&lt;</strong></li>
-<li>标准输入源结束标志 : <strong>&lt;&lt;</strong></li>
-</ul>
-<p><strong><em>管道命令</em></strong></p>
-<ul>
-<li>分割字符 ： <strong>cut</strong></li>
-<li>匹配对应行：<strong>grep</strong></li>
-<li>排序：<strong>sort</strong></li>
-<li>去重 ：<strong>uniq</strong></li>
-<li>统计: <strong>wc</strong></li>
-<li>截取数据流重定向：<strong>tee</strong></li>
-<li>替换，删除字符串 : <strong>tr</strong></li>
-<li>过滤控制字符：<strong>col</strong></li>
-<li>多文件相关栏位联结：<strong>join</strong></li>
-<li>多文件相关栏位粘贴：<strong>paste</strong></li>
-<li>tab转空格：<strong>expand -t</strong></li>
-<li>切割文件 ： <strong>split -b</strong></li>
-<li>一般命令参数代换为管道命令： <strong>xargs </strong></li>
-<li>常用处理工具：<strong>sed，printf, awk</strong></li>
+<h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5><ul>
+<li>需要创建的对象不多时，Factory类复杂度不会太高</li>
+<li>客户端只需要知道传入的参数，对如何创建对象并不关心</li>
 </ul>
 
       
@@ -514,7 +438,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/创建型模式/" rel="tag"># 创建型模式</a>
           
         </div>
       
@@ -527,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/09/linux/linux_vim/" rel="next" title="linux VIM编辑器快捷键">
-                <i class="fa fa-chevron-left"></i> linux VIM编辑器快捷键
+              <a href="/2017/11/26/designPattern/0_design_pattern_principle/" rel="next" title="面向对象的设计原则">
+                <i class="fa fa-chevron-left"></i> 面向对象的设计原则
               </a>
             
           </div>
@@ -537,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/26/designPattern/0_design_pattern_principle/" rel="prev" title="面向对象的设计原则">
-                面向对象的设计原则 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/01/designPattern/2_factory_method_pattern/" rel="prev" title="工厂方法模式">
+                工厂方法模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -706,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux常用命令"><span class="nav-number">1.</span> <span class="nav-text">linux常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单工厂模式"><span class="nav-number">1.</span> <span class="nav-text">简单工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用工厂模式创建对象的好处"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">使用工厂模式创建对象的好处</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">1.0.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.0.3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#适用场景"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">适用场景</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -846,9 +772,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/11/15/linux/linux_command/';
-          this.page.identifier = '2017/11/15/linux/linux_command/';
-          this.page.title = 'linux常用命令';
+          this.page.url = 'http://yoursite.com/2017/11/28/designPattern/1_simple_factory_pattern/';
+          this.page.identifier = '2017/11/28/designPattern/1_simple_factory_pattern/';
+          this.page.title = '简单工厂模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://liqiangcoder.disqus.com/embed.js';
