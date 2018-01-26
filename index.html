@@ -278,6 +278,272 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/redis/redis_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiQiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="on the way">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/redis/redis_base/" itemprop="url">Redis API 入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T00:00:00+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/26/redis/redis_base/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/26/redis/redis_base/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/26/redis/redis_base/" class="leancloud_visitors" data-flag-title="Redis API 入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><ul>
+<li>windows 连接redis: <strong>redis-cli.exe -h 127.0.0.1 -p 6379</strong></li>
+<li>查看所有的key: <strong>keys *</strong></li>
+<li>删除所有key value : <strong>flushall</strong></li>
+<li>查看当前数据库键的数量： <strong>dbsize</strong></li>
+<li>切换数据库 ： <strong>select [index]</strong></li>
+<li>获取键值的数据类型：<strong>type key</strong></li>
+</ul>
+<h2 id="字符串-string"><a href="#字符串-string" class="headerlink" title="字符串(string)"></a>字符串(string)</h2><ul>
+<li>插入键： <strong>set key value</strong></li>
+<li>获取值： <strong>get key</strong></li>
+<li>多重插入键：<strong>mset key value</strong></li>
+<li>多重获取值： <strong>mget key</strong></li>
+<li>判断键是否存在：<strong>exists key</strong></li>
+<li>删除键：<strong>del key</strong> (删除不支持通配符，不过支持多键参数：redis-cli DEL ‘redis-cli KEYS “user:*”‘)</li>
+<li>递增数字: <strong>incr key</strong></li>
+<li>增加指定整数： <strong>incrby key increment</strong></li>
+<li>减少指定整数： <strong>decrby key increment</strong></li>
+<li>增加指定浮点数： <strong>incrbyfloat key increment</strong></li>
+<li>追加value: <strong>append key value</strong></li>
+<li>获取字符串长度： <strong>strlen key</strong></li>
+</ul>
+<h2 id="散列-hash"><a href="#散列-hash" class="headerlink" title="散列(hash)"></a>散列(hash)</h2><ul>
+<li>插入键值： <strong>hset key field value</strong></li>
+<li>获取值： <strong>hget key field</strong></li>
+<li>获取全部键值： <strong>hgetall key</strong></li>
+<li>多重插入键：<strong>hmset key field1 value1 field2 value2*</strong></li>
+<li>多重获取值： <strong>hmget key field1 field1</strong></li>
+<li>判断键是否存在：<strong>hexists key field</strong></li>
+<li>插入键值（原子，键值存在则不插入） ： <strong>hsetnx key field</strong></li>
+<li>增加指定整数： <strong>hincrby key field increment</strong></li>
+<li>删除键值： <strong>hdel key field</strong></li>
+<li>只获取字段名：<strong>hkeys key</strong></li>
+<li>只获取字段值：<strong>hvals key</strong></li>
+<li>获取字段数量： <strong>hlen key</strong></li>
+</ul>
+<h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表(list)"></a>列表(list)</h2><ul>
+<li>向列表左边添加元素(创建元素)： <strong>lpush key value</strong></li>
+<li>向列表右边添加元素(创建元素)： <strong>rpush key value</strong></li>
+<li>从左边弹出一个元素：<strong>lpop key</strong></li>
+<li>从右边弹出一个元素：<strong>rpop key</strong></li>
+<li>获取列表中元素数量：<strong>llen key</strong></li>
+<li>获取列表中片段： <strong>lrange key 0 2</strong></li>
+<li>删除元素： <strong>lrem key count value </strong></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 当count&gt;0，从左边删除count个value值</li>
+<li style="list-style: none"><input type="checkbox" checked> 当count&lt;0，从右边删除|count|个value值</li>
+<li style="list-style: none"><input type="checkbox" checked> 当count=0，整个列表中删除value值</li>
+</ul>
+<ul>
+<li>根据index获取元素：<strong>lindex key index</strong></li>
+<li>指定index位置的的元素：<strong>lset key index value</strong></li>
+<li>修剪列表： <strong>ltrim key start end</strong></li>
+<li>插入元素：<strong>linsert key before|after pivot value</strong></li>
+<li>将元素从一个列表转向另一个列表：<strong>rpoplpush source destination</strong></li>
+</ul>
+<h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合(set)"></a>集合(set)</h2><ul>
+<li>添加元素：<strong>sadd key value[…]</strong></li>
+<li>删除元素：<strong>srem key value[…]</strong></li>
+<li>获取全部集合元素： <strong>smembers key</strong></li>
+<li>判断元素是否存在： <strong>sismember key value</strong></li>
+<li>获取集合元素个数：<strong>scard key</strong></li>
+<li>随机弹出元素： <strong>spop</strong></li>
+<li>随机获取：<strong>srandmember key count</strong></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 当count&gt;0，从集合获取count个不重复值，count&gt;集合元素数目，获取全部</li>
+<li style="list-style: none"><input type="checkbox" checked> 当count&lt;0，从集合获取|count|个值，元素有可能重复</li>
+</ul>
+<ul>
+<li>差：<strong>sdiff setA setB[…]</strong></li>
+<li>交集 : <strong>sinner setA setB[…]</strong></li>
+<li>并集 : <strong>sunion setA setB[…]</strong></li>
+<li>差：<strong>sdiffstore destination setA  setB[…]</strong></li>
+<li>交集：<strong>sinner destination setA  setB[…]</strong></li>
+<li>并集：<strong>sunion destination setA  setB[…]</strong></li>
+</ul>
+<h2 id="有序集合（sorted-set）"><a href="#有序集合（sorted-set）" class="headerlink" title="有序集合（sorted set）"></a>有序集合（sorted set）</h2><blockquote>
+<p>有序集合和列表相似，不过二者使用场景还是有很多不同的。<br>1.列表是通过链表实现，获取靠近两端数据极快，比较适合“新鲜事”、“日志”这样比较少访问中间元素的应用。<br>2.有序集合是使用散列表和跳跃表来实现，即时读取中间位置元素，速度也很快（时间复杂度O(log(N))）。<br>3.列表不能简单地调整元素位置，有序集合可以（更改分数）。<br>4.有序集合比列表更耗费内存。</p>
+</blockquote>
+<ul>
+<li>添加元素：<strong>zadd key score member […]</strong></li>
+<li>获得元素分数：<strong>zscore key member</strong></li>
+<li>获取集合中片段（分数由小到大排序）： <strong>zrange key start stop[withscores]</strong></li>
+<li>获取集合中片段（分数由大到小排序）： <strong>zrevrange key start stop[withscores]</strong></li>
+<li>根据分数范围获取列表中片段（分数由小到大排序）：<strong>zrangebyscore key min max [withscores ] [limit offset count]</strong></li>
+<li>根据分数范围获取集合中片段（分数由大到小排序）：<strong>zrevrangebyscore key max min [withscores ] [limit offset count]</strong></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <strong>+inf -inf</strong> 代表正负无穷  <strong>1 (5 </strong> 代表数学上的[1 5)</li>
+<li>改变元素分数：<strong>zincrby key increment member</strong></li>
+<li>获取集合中元素数量: <strong>zcard key</strong></li>
+<li>获取指定分数范围内元素数目： <strong>zcount key min max</strong></li>
+<li>删除元素： <strong>zrem key member[…] </strong></li>
+<li>按照排名rank删除元素： <strong>zremrangebyrank key start stop</strong></li>
+<li>按照分数删除元素： <strong>zremrangebyrank key min  max</strong></li>
+<li>获取元素排名(正序，分数最小的排名0)： <strong>zrank key member</strong></li>
+<li>获取元素排名（倒序，分数最大的排名0）：<strong>zrevrank key member</strong></li>
+<li>计算有序集合的交集（并集同理）：<strong>zinterstore destination numkeys key[…] [aggregate :sum|min|max]</strong><br>其中numkeys是交集集合元素数目，aggregate选项是交集集合score的具体来源方式，例如aggregate=sum，此时交集集合当前元素的score就是所有被交集的元素score的和。</li>
+</ul>
+<p>附上jedis相关api测试代码:</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * test redis api</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> class testRedisApi &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">            Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>);</div><div class="line">            <span class="comment">//testString(jedis);</span></div><div class="line">            <span class="comment">//testHash(jedis);</span></div><div class="line">            <span class="comment">//testList(jedis);</span></div><div class="line">            <span class="comment">//testSet(jedis);</span></div><div class="line">            testZset(jedis);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 测试String类型</span></div><div class="line"><span class="comment">     * @param jedis</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> testString (Jedis jedis) &#123;</div><div class="line">        <span class="keyword">if</span> (!jedis.exists(<span class="string">"color:0"</span>)) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"插入 string data..."</span>,<span class="keyword">true</span>);</div><div class="line">            <span class="comment">// 新增key value</span></div><div class="line">            jedis.<span class="built_in">set</span>(<span class="string">"color:0"</span>,<span class="string">"red"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"测试String类型..."</span>);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">key</span> = <span class="string">"color:0"</span>;</div><div class="line">        <span class="comment">// 判断key是否存在</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"判断key是否存在"</span> + jedis.exists(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 根据key获取value</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"初始值 = "</span> + jedis.<span class="built_in">get</span>(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 根据key追加value</span></div><div class="line">        jedis.<span class="built_in">append</span>(<span class="built_in">key</span>,<span class="string">"|blue"</span>);</div><div class="line">        <span class="built_in">print</span>(<span class="string">"追加blue后的值: "</span>+ jedis.<span class="built_in">get</span>(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 获取string长度</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取string长度: "</span>+ jedis.strlen(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 删除</span></div><div class="line">        jedis.del(<span class="built_in">key</span>);</div><div class="line">        <span class="built_in">print</span>(<span class="string">"删除key后的值: "</span>+ jedis.<span class="built_in">get</span>(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 递增数字键</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"test递增数字键: "</span>+ jedis.incr(<span class="string">"id"</span>));</div><div class="line">        <span class="built_in">print</span>(<span class="string">"test递增数字键: "</span>+ jedis.incr(<span class="string">"id"</span>));</div><div class="line"></div><div class="line">        jedis.<span class="built_in">set</span>(<span class="string">"color:0"</span>,<span class="string">"red"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 测试Hash类型</span></div><div class="line"><span class="comment">     * @param jedis</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> testHash (Jedis jedis) &#123;</div><div class="line">        <span class="keyword">if</span> (jedis.hlen(<span class="string">"car0"</span>) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"插入 hash data..."</span>,<span class="keyword">true</span>);</div><div class="line">            <span class="comment">// 新增hash数据</span></div><div class="line">            Map&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt; hashMap = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;&gt;();</div><div class="line">            hashMap.put(<span class="string">"brand"</span>,<span class="string">"BMW"</span>);</div><div class="line">            hashMap.put(<span class="string">"color"</span>,<span class="string">"black"</span>);</div><div class="line">            hashMap.put(<span class="string">"price"</span>,<span class="string">"888888"</span>);</div><div class="line">            jedis.hmset(<span class="string">"car0"</span>,hashMap);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"测试Hash类型..."</span>);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">key</span> = <span class="string">"car0"</span>;</div><div class="line">        <span class="comment">// 根据key获取field value</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取field值："</span> + jedis.hget(<span class="built_in">key</span>,<span class="string">"brand"</span>));</div><div class="line">        <span class="comment">// 获取全部field value (Map)</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取全部field值："</span> + jedis.hgetAll(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 判断filed是否存在</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"判断filed是否存在："</span> + jedis.hexists(<span class="built_in">key</span>,<span class="string">"brand"</span>));</div><div class="line">        <span class="comment">// 获取全部field</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取全部field："</span> + jedis.hkeys(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 获取全部value</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取全部value: "</span> + jedis.hvals(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 删除指定field</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"删除指定field: "</span> + jedis.hdel(<span class="built_in">key</span>,<span class="string">"color"</span>,<span class="string">"price"</span>,<span class="string">"brand"</span>));</div><div class="line">        <span class="comment">// 获取field数量</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取field数量:"</span> +jedis.hlen(<span class="built_in">key</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 测试List类型</span></div><div class="line"><span class="comment">     * @param jedis</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> testList (Jedis jedis) &#123;</div><div class="line">        <span class="keyword">if</span> (jedis.llen(<span class="string">"girls"</span>) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"插入 list data..."</span>,<span class="keyword">true</span>);</div><div class="line">            <span class="comment">// 新增list数据</span></div><div class="line">            jedis.lpush(<span class="string">"girls"</span>,<span class="string">"yuyu"</span>);</div><div class="line">            jedis.rpush(<span class="string">"girls"</span>,<span class="string">"jingjing"</span>);</div><div class="line">            jedis.rpush(<span class="string">"girls"</span>,<span class="string">"qiqi"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"测试List类型..."</span>);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">key</span> = <span class="string">"girls"</span>;</div><div class="line">        <span class="comment">//获取list中片段(-1代表最后一个)</span></div><div class="line">        <span class="built_in">print</span>(jedis.lrange(<span class="built_in">key</span>,<span class="number">0</span>,<span class="number">-1</span>).toString());</div><div class="line">        <span class="comment">// 从左边pop一个元素（右边rpop）</span></div><div class="line">        <span class="built_in">print</span>(jedis.lpop(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 获取list中元素数量</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"list中元素数量"</span> +jedis.llen(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 根据index获取元素</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"根据index获取元素:"</span> + jedis.lindex(<span class="built_in">key</span>,<span class="number">0</span>));</div><div class="line">        <span class="comment">// 根据index设置元素(index必须是在当前数组域中，否则报ERR index out of range)</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"根据index设置元素:"</span> + jedis.lset(<span class="built_in">key</span>,<span class="number">0</span>,<span class="string">"huhu"</span>));</div><div class="line">        <span class="comment">// 删除元素</span></div><div class="line">        <span class="comment">// 当count&gt;0，从左边删除count个value值</span></div><div class="line">        <span class="comment">// 当count&lt;0，从右边删除|count|个value值</span></div><div class="line">        <span class="comment">// 当count=0，整个列表中删除value值</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"删除元素:"</span> + jedis.lrem(<span class="built_in">key</span>,<span class="number">0</span>,<span class="string">"huhu"</span>));</div><div class="line">        <span class="comment">// 插入元素到指定位置</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"插入元素到指定位置:"</span>+ jedis.linsert(<span class="built_in">key</span>, BinaryClient.LIST_POSITION.AFTER,<span class="string">"yuyu"</span>,<span class="string">"hxhx"</span>));</div><div class="line">        <span class="comment">// 将元素从一个列表转向另一个列表</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"元素从一个列表转向另一个列表:"</span> + jedis.rpoplpush(<span class="built_in">key</span>,<span class="string">"test"</span>));</div><div class="line">        <span class="comment">// 修剪list列表</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"修剪list列表:"</span> + jedis.ltrim(<span class="string">"test"</span>,jedis.llen(<span class="string">"test"</span>),jedis.llen(<span class="string">"test"</span>)));</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 测试Set类型</span></div><div class="line"><span class="comment">     * @param jedis</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> testSet (Jedis jedis) &#123;</div><div class="line">        <span class="keyword">if</span> (jedis.scard(<span class="string">"languages"</span>) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"插入 Set data..."</span>,<span class="keyword">true</span>);</div><div class="line">            <span class="comment">// 新增set数据</span></div><div class="line">            jedis.sadd(<span class="string">"languages"</span>,<span class="string">"java"</span>,<span class="string">"java"</span>,<span class="string">"javascript"</span>,<span class="string">"python"</span>,<span class="string">"golang"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"测试Set类型..."</span>);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">key</span> = <span class="string">"languages"</span>;</div><div class="line">        <span class="comment">// 获取全部集合元素 (Set 无序)</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取全部集合元素："</span> + jedis.smembers(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 判断元素是否存在</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"判断元素是否存在："</span> + jedis.sismember(<span class="built_in">key</span>,<span class="string">"java"</span>));</div><div class="line">        <span class="comment">// 随机pop元素</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"随机pop元素:"</span> + jedis.spop(<span class="built_in">key</span>));</div><div class="line">        <span class="comment">// 随机获取</span></div><div class="line">        <span class="comment">// 当count&gt;0，从集合获取count个不重复值，count&gt;集合元素数目，获取全部</span></div><div class="line">        <span class="comment">// 当count&lt;0，从集合获取|count|个值，元素有可能重复</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"随机获取元素:"</span> + jedis.srandmember(<span class="built_in">key</span>,<span class="number">1</span>));</div><div class="line">        <span class="comment">// 移除集合指定成员</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"移除集合指定成员:"</span> + jedis.srem(<span class="built_in">key</span>,<span class="string">"java"</span>,<span class="string">"javascript"</span>));</div><div class="line">        jedis.sadd(<span class="string">"set1"</span>,<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>);</div><div class="line">        jedis.sadd(<span class="string">"set2"</span>,<span class="string">"1"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>);</div><div class="line">        <span class="comment">// 差集</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"差集："</span> + jedis.sdiff(<span class="string">"set1"</span>,<span class="string">"set2"</span>));</div><div class="line">        <span class="comment">// 交集</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"交集："</span> + jedis.sinter(<span class="string">"set1"</span>,<span class="string">"set2"</span>));</div><div class="line">        <span class="comment">// 并集</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"并集："</span>+ jedis.sunion(<span class="string">"set1"</span>,<span class="string">"set2"</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 测试Zset类型</span></div><div class="line"><span class="comment">     * @param jedis</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> testZset (Jedis jedis) &#123;</div><div class="line">        <span class="keyword">if</span> (jedis.zcard(<span class="string">"phones"</span>) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"插入 Zset data..."</span>,<span class="keyword">true</span>);</div><div class="line">            <span class="comment">// 新增zset数据</span></div><div class="line">            Map&lt;<span class="keyword">String</span>,Double&gt; zMap = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;&gt;();</div><div class="line">            zMap.put(<span class="string">"xiaomi"</span>,<span class="number">1.0</span>);</div><div class="line">            zMap.put(<span class="string">"huawei"</span>,<span class="number">1.0</span>);</div><div class="line">            zMap.put(<span class="string">"oneplus"</span>,<span class="number">2.0</span>);</div><div class="line">            zMap.put(<span class="string">"apple"</span>,<span class="number">3.0</span>);</div><div class="line">            jedis.zadd(<span class="string">"phones"</span>,zMap);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"测试Zset类型..."</span>);</div><div class="line">        <span class="keyword">String</span> <span class="built_in">key</span> = <span class="string">"phones"</span>;</div><div class="line">        <span class="comment">// 根据index获取集合片段(socre由小到大排序，zrevrange是相反的)</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"根据index获取集合片段："</span>+ jedis.zrange(<span class="built_in">key</span>,<span class="number">0</span>,<span class="number">-1</span>));</div><div class="line">        <span class="comment">// 获取元素score</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取元素score:"</span> + jedis.zscore(<span class="built_in">key</span>,<span class="string">"apple"</span>));</div><div class="line">        <span class="comment">// 根据score范围获取集合片段(四个参数分别为：MAX socre，MIN score, offset[偏移量] ,count[数目])</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"根据score获取集合片段："</span> + jedis.zrevrangeByScore(<span class="built_in">key</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>));</div><div class="line">        <span class="comment">// 获取指定score范围内元素数目</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取指定score范围元素数目："</span> + jedis.zcount(<span class="built_in">key</span>,<span class="number">0</span>,<span class="number">2</span>));</div><div class="line">        <span class="comment">// 改变元素score</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"改变元素socre:"</span> + jedis.zincrby(<span class="built_in">key</span>,<span class="number">4</span>,<span class="string">"huawei"</span>));</div><div class="line">        <span class="comment">// 获取元素排名index（正序）</span></div><div class="line">        <span class="built_in">print</span>(<span class="string">"获取元素排名："</span> + jedis.zrank(<span class="built_in">key</span>,<span class="string">"huawei"</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 打印消息（不切行）</span></div><div class="line"><span class="comment">     * @param str</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="built_in">print</span> (<span class="keyword">String</span> <span class="built_in">str</span>) &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="built_in">str</span>,<span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 打印消息（切行）</span></div><div class="line"><span class="comment">     * @param str</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="built_in">print</span> (<span class="keyword">String</span> <span class="built_in">str</span>,<span class="built_in">boolean</span> isNextLine) &#123;</div><div class="line">        <span class="keyword">if</span> (isNextLine) &#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="built_in">str</span>+<span class="string">"\n"</span>);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/resourceCode/Java_ArrayList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1946,276 +2212,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/linux/linux_command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LiQiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="on the way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/15/linux/linux_command/" itemprop="url">linux常用命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T00:00:00+08:00">
-                2017-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/15/linux/linux_command/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/15/linux/linux_command/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/15/linux/linux_command/" class="leancloud_visitors" data-flag-title="linux常用命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><hr>
-<p><strong><em>基本操作快捷键</em></strong></p>
-<ul>
-<li>登录shell <strong>ctrl+shift+f1-f6</strong></li>
-<li>退出shell到图形页面 <strong>ctrl+shift+f7</strong>  </li>
-<li>命令补全 <strong>tab</strong></li>
-<li>暂停正在运行的shell程序执行 <strong>ctrl+c</strong></li>
-<li>注销shell执行（=exit） <strong>ctrl+d</strong>  </li>
-</ul>
-<p><strong><em>基本操作命令行</em></strong></p>
-<ul>
-<li>修改shell支持语言 </li>
-<li style="list-style: none"><input type="checkbox" checked> 查看语言编码格式 <strong>echo $LANG</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 修改语言格式为英文 <strong>LANG=en_US</strong></li>
-<li>切换用户 <strong>su</strong></li>
-<li>查看日期 <strong>date</strong></li>
-<li>查看日历 <strong>cal</strong></li>
-<li>计算器 <strong>bc</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 显示小数位数（默认整数）<strong>sclae=n</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> 离开计算器 <strong>quit</strong></li>
-<li>命令行帮助文档 <strong>man+命令行</strong></li>
-<li>将数据同步写入硬盘（一般root写入）<em>*sync</em></li>
-<li>关机 <strong>shutdown</strong></li>
-<li style="list-style: none"><input type="checkbox"> <strong>-h</strong> 立即关机</li>
-<li style="list-style: none"><input type="checkbox"> <strong>-r</strong> 立即重启</li>
-<li style="list-style: none"><input type="checkbox"> <strong>-k</strong> 只显示消息</li>
-<li style="list-style: none"><input type="checkbox" checked> <strong>shutdown -h +10/20:15 ‘we are readying the linux after 10min/ in 20:15’</strong> 在10分钟后（或于20:15）关机，并且在当前登录此机器的用户屏幕前显示信息</li>
-<li>文件系统检查 <strong>fsck</strong></li>
-</ul>
-<hr>
-<p><strong><em>文件管理命令行</em></strong> </p>
-<ul>
-<li>展示所有文件 <strong>ls -al</strong></li>
-<li>展示特定文件夹下文件 <strong>ls -l /../..</strong></li>
-<li>改变文件用户组 <strong>chgrp groupname dirname/filename</strong></li>
-<li>改变文件所有者 <strong>chown ownname [:groupname] dirname/filename</strong></li>
-<li>改变文件权限 <strong>chmod numberList|chatList dirname/filename</strong></li>
-<li style="list-style: none"><input type="checkbox" checked> rwz三种权限对应数字分别为4 2 1,如果将test.text的权限修改为 rwxr<em>xrw</em>，命令也就是 chmod 756 test.text</li>
-<li style="list-style: none"><input type="checkbox" checked> 也可以使用u g o通过+ - =操作符来修改</li>
-<li>创建文件 <strong>touch dirname/filename</strong></li>
-</ul>
-<hr>
-<p><strong><em>文件目录操作</em></strong>  </p>
-<p><strong>特殊符号：</strong>  </p>
-<p>当前目录：  <strong>.</strong><br>上层目录：  <strong>..</strong><br>前一个工作目录： <strong>-</strong><br>当前账户主目录： <strong>~</strong><br>account账户主目录： <strong>~ account</strong>  </p>
-<p><strong>相关命令：</strong>  </p>
-<ul>
-<li>切换目录：<strong>cd</strong></li>
-<li>显示当前目录：<strong>pwd</strong></li>
-<li>创建目录： <strong>mkdir</strong></li>
-<li>删除目录：<strong>rmdir</strong></li>
-<li>移动文件：<strong>mv</strong></li>
-<li>删除文件：<strong>rm</strong></li>
-<li>新建文件： <strong>touch</strong></li>
-<li>赋予文件隐藏属性 ： <strong>chattr</strong> </li>
-<li>新增环境变量：<strong>PATH=”$PATH”:/dirname</strong></li>
-<li>查找执行文件（PATH下）：<strong>which</strong></li>
-<li>查找特定文件: <strong>whereis</strong></li>
-<li>查找本地文件：<strong>locate</strong>(可使用updatedb更新下数据文件再查找，比较耗时)</li>
-<li>详细检索文件(磁盘检索): <strong>find</strong></li>
-<li>查看文件系统属性: <strong>dumpe2fs</strong></li>
-<li>查看当前使用的文件系统: <strong>df</strong></li>
-<li>查看文件系统详情: <strong>du</strong></li>
-<li>磁盘操作: <strong>fdisk</strong> (使用前需用df命令找到文件系统路径)</li>
-<li>磁盘格式化: <strong>mkfs</strong></li>
-<li>挂载命令: <strong>mount</strong></li>
-<li>检查文件系统:<strong>fsck</strong></li>
-<li>文件压缩：<strong>gzip</strong> (.gz)、<strong>bzip2</strong>(.bz2)</li>
-<li style="list-style: none"><input type="checkbox"> 打包压缩（z代表gzip,j代表bzip2）<strong>tar -zpcv -f /root/etc.tar.gz /etc</strong></li>
-<li style="list-style: none"><input type="checkbox"> 查看压缩文件 <strong>tar -ztv -f /root/etc.tar.gz</strong></li>
-<li style="list-style: none"><input type="checkbox"> 解压缩到指定文件夹 <strong>tar -zxv -f /root/etc.tar.gz -C /tmp</strong></li>
-</ul>
-<hr>
-<p><strong><em>bash相关命令</em></strong></p>
-<ul>
-<li>查看环境变量：<strong>env 或  set</strong>  </li>
-<li>取消环境变量 : <strong>unset</strong></li>
-<li>变量键盘读取 : <strong>read</strong></li>
-<li>声明变量类型 : <strong>declare或typeset</strong></li>
-<li>直接写入配置文件: <strong>source 或 .</strong></li>
-</ul>
-<p><strong><em>特殊符号</em></strong></p>
-<ul>
-<li>以覆盖的方法将正确的数据输出：<strong>1&gt;</strong></li>
-<li>以累加的方法将正确的数据输出： <strong>1&gt;&gt;</strong></li>
-<li>以覆盖的方法将错误的数据输出：<strong>2&gt;</strong></li>
-<li>以累加的方法将错误的数据输出：<strong>2&gt;&gt;</strong></li>
-<li>标准输入源  : <strong>&lt;</strong></li>
-<li>标准输入源结束标志 : <strong>&lt;&lt;</strong></li>
-</ul>
-<p><strong><em>管道命令</em></strong></p>
-<ul>
-<li>分割字符 ： <strong>cut</strong></li>
-<li>匹配对应行：<strong>grep</strong></li>
-<li>排序：<strong>sort</strong></li>
-<li>去重 ：<strong>uniq</strong></li>
-<li>统计: <strong>wc</strong></li>
-<li>截取数据流重定向：<strong>tee</strong></li>
-<li>替换，删除字符串 : <strong>tr</strong></li>
-<li>过滤控制字符：<strong>col</strong></li>
-<li>多文件相关栏位联结：<strong>join</strong></li>
-<li>多文件相关栏位粘贴：<strong>paste</strong></li>
-<li>tab转空格：<strong>expand -t</strong></li>
-<li>切割文件 ： <strong>split -b</strong></li>
-<li>一般命令参数代换为管道命令： <strong>xargs </strong></li>
-<li>常用处理工具：<strong>sed，printf, awk</strong></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2268,7 +2264,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2279,7 +2275,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2290,7 +2286,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
